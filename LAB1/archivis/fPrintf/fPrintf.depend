@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1526588888 source:d:\pruhl\fprintf\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1527167735 source:d:\ruhl\fprintf\main.c
+	<stdio.h>
+	<stdlib.h>
+

@@ -1,0 +1,205 @@
+# depslib dependency file v1.0
+1527156957 source:d:\ruhl\ppl ruhl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+	"autos.h"
+
+1527156957 d:\ruhl\ppl ruhl\propietario.h
+
+1527156957 source:d:\ruhl\ppl ruhl\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+
+1527088207 source:c:\users\palu\desktop\utn\ppl ruhl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+	"autos.h"
+
+1526775916 c:\users\palu\desktop\utn\ppl ruhl\propietario.h
+
+1526777511 source:c:\users\palu\desktop\utn\ppl ruhl\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+
+1527086018 source:c:\users\palu\desktop\utn\ppl ruhl\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"autos.h"
+	"propietario.h"
+
+1527088202 c:\users\palu\desktop\utn\ppl ruhl\autos.h
+	"propietario.h"
+
+1526777386 source:c:\users\palu\desktop\utn\parcial estacionamiento ruhl\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"autos.h"
+	"propietario.h"
+
+1526605811 c:\users\palu\desktop\utn\parcial estacionamiento ruhl\autos.h
+	"propietario.h"
+
+1526775916 c:\users\palu\desktop\utn\parcial estacionamiento ruhl\propietario.h
+
+1526777511 source:c:\users\palu\desktop\utn\parcial estacionamiento ruhl\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+
+1526775375 source:c:\users\palu\desktop\utn\parcial estacionamiento ruhl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+	"autos.h"
+
+1527156957 source:d:\ruhl\ppl ruhl\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"autos.h"
+	"propietario.h"
+
+1527156957 d:\ruhl\ppl ruhl\autos.h
+	"propietario.h"
+
+1527156957 source:d:\ruhl paula\recuperatoriolab1lenguajec\ppl ruhl\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"autos.h"
+	"propietario.h"
+
+1527156957 d:\ruhl paula\recuperatoriolab1lenguajec\ppl ruhl\autos.h
+	"propietario.h"
+
+1527156957 d:\ruhl paula\recuperatoriolab1lenguajec\ppl ruhl\propietario.h
+
+1527163535 source:d:\ruhl paula\recuperatoriolab1lenguajec\ppl ruhl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+	"autos.h"
+
+1527156957 source:d:\ruhl paula\recuperatoriolab1lenguajec\ppl ruhl\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+
+1527694971 source:c:\users\palu\desktop\utn\tps\ppl ruhl\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+
+1527694971 c:\users\palu\desktop\utn\tps\ppl ruhl\propietario.h
+
+1527694971 source:c:\users\palu\desktop\utn\tps\ppl ruhl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+	"autos.h"
+
+1527694680 c:\users\palu\desktop\utn\tps\ppl ruhl\autos.h
+	"propietario.h"
+
+1527694680 source:c:\users\palu\desktop\utn\tps\ppl ruhl\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"autos.h"
+	"propietario.h"
+
+1527775676 source:d:\ruhl paula\ppl ruhl\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"autos.h"
+	"propietario.h"
+
+1527773960 d:\ruhl paula\ppl ruhl\autos.h
+	"propietario.h"
+
+1527775077 d:\ruhl paula\ppl ruhl\propietario.h
+
+1527775441 source:d:\ruhl paula\ppl ruhl\propietario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+
+1527775402 source:d:\ruhl paula\ppl ruhl\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<time.h>
+	<conio.h>
+	"propietario.h"
+	"autos.h"
+

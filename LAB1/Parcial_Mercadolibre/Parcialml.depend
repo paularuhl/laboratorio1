@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1525447716 source:d:\ruhl\parcialml\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+
+1525447610 d:\ruhl\parcialml\funciones.h
+
+1525406119 source:c:\users\palu\desktop\utn\programacion_1_laboratorio_1-master\parcialml-20180504t010728z-001\parcialml\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1525406174 c:\users\palu\desktop\utn\programacion_1_laboratorio_1-master\parcialml-20180504t010728z-001\parcialml\funciones.h
+
+1525406661 source:c:\users\palu\desktop\utn\programacion_1_laboratorio_1-master\parcialml-20180504t010728z-001\parcialml\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1525447743 source:d:\ruhl\parcialml\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+
+1525823815 source:c:\users\palu\downloads\parcialml\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+
+1525823815 c:\users\palu\downloads\parcialml\funciones.h
+
+1525622472 source:c:\users\palu\downloads\parcialml\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+

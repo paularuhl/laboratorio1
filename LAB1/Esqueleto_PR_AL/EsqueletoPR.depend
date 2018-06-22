@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1529253537 source:c:\users\palu\desktop\gitrepo\esqueletopr\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+
+1529253587 c:\users\palu\desktop\gitrepo\esqueletopr\lib.h
+
+1529253468 source:c:\users\palu\desktop\gitrepo\esqueletopr\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1529253310 source:c:\users\palu\desktop\gitrepo\esqueletopr\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529253411 c:\users\palu\desktop\gitrepo\esqueletopr\arraylist.h
+
