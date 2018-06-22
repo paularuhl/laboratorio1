@@ -72,3 +72,28 @@
 	"lib.h"
 	"ArrayList.h"
 
+1529636252 source:d:\ruhl\lab1\parcial_consultorio_al\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529636252 d:\ruhl\lab1\parcial_consultorio_al\arraylist.h
+
+1529679607 source:d:\ruhl\lab1\parcial_consultorio_al\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1529680241 d:\ruhl\lab1\parcial_consultorio_al\lib.h
+	"ArrayList.h"
+
+1529680387 source:d:\ruhl\lab1\parcial_consultorio_al\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+

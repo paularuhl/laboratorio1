@@ -14,9 +14,10 @@ typedef struct{
 
 typedef struct{
 
-    int dni;
-    int prioridad;
     int turno;
+    int prioridad;
+    int dni;
+    char ddni[];
 
 }eTramites;
 
@@ -34,12 +35,16 @@ typedef struct{
 
 
 
-void tramiteUrgente (ArrayList* turnosTotales);
-void tramiteRegular (ArrayList* turnosTotales);
-void proximoCliente(ArrayList* turnosTotales, ArrayList* turnosAtendidos);
+int nuevoTramite(ArrayList* tramitesUrgentes, int turno, int prioridad);
+void proximoCliente(ArrayList* tramitesUrgentes, ArrayList* tramitesRegulares, ArrayList* atendidosUrg, ArrayList* atendidosReg);
+void listarPendientes (ArrayList* tramitesUrgentes, ArrayList* tramitesRegulares);
 
 int turno_getDni(void);
-void turno_mostrarTramite (eTramites* tramite);
+void turno_printPrioridad(int prioridad);
+void turno_mostrarUnTramite (eTramites* tramite);
+int turno_compararDni(void* tramiteA, void* tramiteB);
+void turno_mostrarLista(ArrayList* listado);
+
 
 
 

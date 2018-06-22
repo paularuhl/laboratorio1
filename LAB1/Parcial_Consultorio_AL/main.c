@@ -1,12 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lib.h"
+
+#define LOW 2
+#define HIGH 3
+
 int main()
 {
     //eGen genStruct;
     //char* fileName=(char*)malloc(sizeof(char)*50);
-    ArrayList* turnosPendientes=al_newArrayList();
-    ArrayList* turnosAtendidos=al_newArrayList();
+    ArrayList* atendidosUrg=al_newArrayList();
+    ArrayList* atendidosReg=al_newArrayList();
+    ArrayList* tramitesRegulares=al_newArrayList();
+    ArrayList* tramitesUrgentes=al_newArrayList();
+    int turnoU=1;
+    int turnoR=1;
     int opcion;
     char salir='n';
 
@@ -16,24 +24,25 @@ int main()
         switch(opcion)
         {
         case 1:
-            tramiteUrgente(turnosPendientes);
+            turnoU=nuevoTramite(tramitesUrgentes,turnoU,HIGH);
             printf("\n");
             system("pause");
             system("cls");
             break;
         case 2:
-            tramiteRegular(turnosPendientes);
+            turnoR=nuevoTramite(tramitesRegulares,turnoR,LOW);
             printf("\n");
             system("pause");
             system("cls");
             break;
         case 3:
-            proximoCliente(turnosPendientes, turnosAtendidos);
+            proximoCliente(tramitesUrgentes, tramitesRegulares, atendidosUrg, atendidosReg);
             printf("\n");
             system("pause");
             system("cls");
             break;
         case 4:
+            listarPendientes(tramitesUrgentes,tramitesRegulares);
             printf("\n");
             system("pause");
             system("cls");

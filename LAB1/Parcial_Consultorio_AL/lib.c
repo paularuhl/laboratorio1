@@ -11,7 +11,6 @@
 #define HIGH 3
 
 
-
 int menuPrincipal (void)
 {
     int opcion;
@@ -36,98 +35,74 @@ int menuPrincipal (void)
 
 
 
-void tramiteUrgente (ArrayList* turnosPendientes)
+int nuevoTramite (ArrayList* tramitesRegulares, int turno, int prioridad)
 {
     eTramites* aux=(eTramites*)malloc(sizeof(eTramites));
-    int* dni=(int*)malloc(sizeof(int));
-    int* auxTurno=(int*)malloc(sizeof(int));
-    int* ans=(int*)malloc(sizeof(int));
+    int dni, ans;
 
-    *dni=turno_getDni();
-    *auxTurno=turnosPendientes->len(turnosPendientes, aux);
+    dni=turno_getDni();
 
-    printf("Confirmar tramite URGENTE para DNI: %d? s/n\n",*dni);
-    *ans=confirmar();
-    if(*ans)
+    printf("Confirmar tramite ");
+    turno_printPrioridad(prioridad);
+    printf(" para DNI: %d? s/n\n",dni);
+
+    ans=confirmar();
+    if(ans)
     {
-        aux->dni=*dni;
-        aux->prioridad=HIGH;
-        aux->turno=*auxTurno++;
-        al_add(turnosPendientes, aux);
+        aux->dni=dni;
+        aux->prioridad=prioridad;
+        aux->turno=turno++;
+        tramitesRegulares->add(tramitesRegulares, aux);
         printf("\nTurno creado correctamente. Aguarde a ser llamado.");
     }
     else
     {
         printf("\nTurno cancelado.");
     }
-
+    return turno;
 }
 
-void tramiteRegular (ArrayList* turnosPendientes)
-{
-    eTramites* aux=(eTramites*)malloc(sizeof(eTramites));
-    int* dni=(int*)malloc(sizeof(int));
-    int* auxTurno=(int*)malloc(sizeof(int));
-    int* ans=(int*)malloc(sizeof(int));
-    *dni=turno_getDni();
-    *auxTurno=turnosPendientes->len(turnosPendientes);
-
-    printf("Confirmar tramite REGULAR para DNI: %d? s/n\n",*dni);
-    *ans=confirmar();
-    if(*ans)
-    {
-        aux->dni=*dni;
-        aux->prioridad=LOW;
-        aux->turno=*auxTurno++;
-        turnosPendientes->add(turnosPendientes, aux);
-        printf("\nTurno creado correctamente. Aguarde a ser llamado.");
-    }
-    else
-    {
-        printf("\nTurno cancelado.");
-    }
-}
-
-void proximoCliente(ArrayList* turnosPendientes, ArrayList* turnosAtendidos)
+void proximoCliente(ArrayList* tramitesUrgentes, ArrayList* tramitesRegulares, ArrayList* atendidosUrg, ArrayList* atendidosReg)
 {
     eTramites* proximo=(eTramites*)malloc(sizeof(eTramites*));
-    int i, flag=1;
-    if(turnosPendientes != NULL && turnosAtendidos !=NULL)
+    if(tramitesUrgentes !=NULL && tramitesRegulares !=NULL && atendidosUrg !=NULL && atendidosReg !=NULL && proximo !=NULL)
     {
-        for(i=0; i<turnosPendientes->size; i++)
+        if(!tramitesUrgentes->isEmpty(tramitesUrgentes))
         {
-            proximo=turnosPendientes->get(turnosPendientes->pElements+i);
-            if(proximo->prioridad==HIGH)
-            {
-                //flag=0;
-                //proximo=turnosPendientes->pop(turnosPendientes,i);
-                //turnosAtendidos->add(turnosAtendidos,proximo);
-                turno_mostrarTramite(proximo);
-                break;
-            }
-
+            proximo=tramitesUrgentes->pop(tramitesUrgentes,0);
+            atendidosUrg->add(atendidosUrg,proximo);
+            turno_mostrarUnTramite(proximo);
         }
-        /*if(flag)
+        else if(!tramitesRegulares->isEmpty(tramitesRegulares))
         {
-            for(i=0; i<turnosPendientes->size; i++)
-            {
-                proximo=turnosPendientes->get(turnosPendientes->pElements+i);
-                if(proximo->prioridad==LOW)
-                {
-                    proximo=turnosPendientes->pop(turnosPendientes,i);
-                    turnosAtendidos->add(turnosAtendidos,proximo);
-                    turno_mostrarTramite(proximo);
-                    break;
-                }
-
-            }
-        }*/
+            proximo=tramitesRegulares->pop(tramitesRegulares,0);
+            atendidosReg->add(atendidosReg,proximo);
+            turno_mostrarUnTramite(proximo);
+        }
+        else
+        {
+            printf("No hay clientes en espera...");
+        }
     }
 
 }
 
-void listarPendientes (ArrayList* turnosPendientes)
+void listarPendientes (ArrayList* tramitesUrgentes, ArrayList* tramitesRegulares)
 {
+    if(tramitesUrgentes!=NULL && tramitesRegulares!=NULL)
+    {
+        if(!tramitesUrgentes->isEmpty(tramitesUrgentes))
+        {
+            printf("\nTramites urgentes:");
+            turno_mostrarLista(tramitesUrgentes);
+        }
+        if(!tramitesUrgentes->isEmpty(tramitesUrgentes))
+        {
+            printf("\nTramites regulares:");
+            turno_mostrarLista(tramitesRegulares);
+        }
+
+    }
 
 }
 
@@ -136,15 +111,21 @@ int turno_getDni(void)
 {
     int aux;
     aux = ingresoStringNumerico("DNI");
-    aux = validarDatoMaxMin(aux,"DNI",1000000,99999999);
+    //aux = validarDatoMaxMin(aux,"DNI",1000000,99999999);
 
     return aux;
 }
 
-void turno_mostrarTramite (eTramites* tramite)
+void turno_mostrarUnTramite (eTramites* tramite)
 {
     printf("DNI: %d / TIPO DE TRAMITE: ",tramite->dni);
-    switch(tramite->prioridad)
+    turno_printPrioridad(tramite->prioridad);
+    printf(" / TURNO: %d\n",tramite->turno);
+}
+
+void turno_printPrioridad(int prioridad)
+{
+    switch(prioridad)
     {
     case HIGH:
         printf("URGENTE");
@@ -153,7 +134,32 @@ void turno_mostrarTramite (eTramites* tramite)
         printf("REGULAR");
         break;
     }
-    printf(" / TURNO: %d\n",tramite->turno);
+}
+
+void turno_mostrarLista(ArrayList* listado)
+{
+    int i, len;
+    eTramites* tramite;
+    if(listado!=NULL)
+    {
+        len=listado->len(listado);
+        for(i=0; i<len; i++)
+        {
+            tramite=listado->get(listado,i);
+            printf("\nTURNO: %d\tDNI: %d",tramite->turno,tramite->dni);
+        }
+    }
+}
+
+int turno_compararDni(void* tramiteA, void* tramiteB)
+{
+    eTramites* tramite1;
+    eTramites* tramite2;
+
+    tramite1=(eTramites*)tramiteA;
+    tramite2=(eTramites*)tramiteB;
+
+    return strcmp(tramite1->dni,tramite2->dni);
 }
 
 int confirmar(void)
@@ -290,6 +296,18 @@ void getString(char mensaje[],char input[])
     fflush(stdin);
     printf("%s",mensaje);
     gets(input);
+}
+
+int getStringNumerico(char mensaje[],char input[])
+{
+    char aux[256];
+    getString(mensaje,aux);
+    if(esNumerico(aux))
+    {
+        strcpy(input,aux);
+        return 1;
+    }
+    return 0;
 }
 
 int getStringAlfaNumerico(char mensaje[],char input[])
