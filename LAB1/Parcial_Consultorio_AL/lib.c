@@ -7,8 +7,6 @@
 #include "ArrayList.h"
 
 #define ERROR -1
-#define WAITING 0
-#define ATENDIDO 1
 #define LOW 2
 #define HIGH 3
 
@@ -38,29 +36,24 @@ int menuPrincipal (void)
 
 
 
-void tramiteUrgente (ArrayList* turnosTotales, int* turno)
+void tramiteUrgente (ArrayList* turnosPendientes)
 {
-    eTramites tramite;
-    eTramites* aux=&tramite;
-    int dni=0;
-    char res;
-    aux->dni=turno_getDni();
-    printf("Confirmar tramite URGENTE para DNI: %d? s/n\n",dni);
-    res = getchar();
-    res = tolower(res);
-    while(res!='s'&&res!='n')
+    eTramites* aux=(eTramites*)malloc(sizeof(eTramites));
+    int* dni=(int*)malloc(sizeof(int));
+    int* auxTurno=(int*)malloc(sizeof(int));
+    int* ans=(int*)malloc(sizeof(int));
+
+    *dni=turno_getDni();
+    *auxTurno=turnosPendientes->len(turnosPendientes, aux);
+
+    printf("Confirmar tramite URGENTE para DNI: %d? s/n\n",*dni);
+    *ans=confirmar();
+    if(*ans)
     {
-        printf("Respuesta incorrecta, ingrese s por SI o n por NO...");
-        res = getchar();
-        res = tolower(res);
-    }
-    if(res=='s')
-    {
-        aux->estado=WAITING;
+        aux->dni=*dni;
         aux->prioridad=HIGH;
-        aux->turno=*turno;
-        *turno++;
-        al_add(turnosTotales, aux);
+        aux->turno=*auxTurno++;
+        al_add(turnosPendientes, aux);
         printf("\nTurno creado correctamente. Aguarde a ser llamado.");
     }
     else
@@ -70,27 +63,23 @@ void tramiteUrgente (ArrayList* turnosTotales, int* turno)
 
 }
 
-void tramiteRegular (ArrayList* turnosTotales, int* turno)
+void tramiteRegular (ArrayList* turnosPendientes)
 {
-    eTramites tramite;
-    eTramites* aux=&tramite;
-    int dni=0;
-    char res;
-    aux->dni=turno_getDni();
-    printf("Confirmar tramite REGULAR para DNI: %d? s/n\n",dni);
-    res = getchar();
-    res = tolower(res);
-    while(res!='s'&&res!='n')
+    eTramites* aux=(eTramites*)malloc(sizeof(eTramites));
+    int* dni=(int*)malloc(sizeof(int));
+    int* auxTurno=(int*)malloc(sizeof(int));
+    int* ans=(int*)malloc(sizeof(int));
+    *dni=turno_getDni();
+    *auxTurno=turnosPendientes->len(turnosPendientes);
+
+    printf("Confirmar tramite REGULAR para DNI: %d? s/n\n",*dni);
+    *ans=confirmar();
+    if(*ans)
     {
-        printf("Respuesta incorrecta, ingrese s por SI o n por NO...");
-        res = getchar();
-        res = tolower(res);
-    }
-    if(res=='s')
-    {
-        aux->estado=WAITING;
+        aux->dni=*dni;
         aux->prioridad=LOW;
-        al_add(turnosTotales, aux);
+        aux->turno=*auxTurno++;
+        turnosPendientes->add(turnosPendientes, aux);
         printf("\nTurno creado correctamente. Aguarde a ser llamado.");
     }
     else
@@ -99,12 +88,45 @@ void tramiteRegular (ArrayList* turnosTotales, int* turno)
     }
 }
 
-void proximoCliente(ArrayList* turnosTotales)
+void proximoCliente(ArrayList* turnosPendientes, ArrayList* turnosAtendidos)
 {
+    eTramites* proximo=(eTramites*)malloc(sizeof(eTramites*));
+    int i, flag=1;
+    if(turnosPendientes != NULL && turnosAtendidos !=NULL)
+    {
+        for(i=0; i<turnosPendientes->size; i++)
+        {
+            proximo=turnosPendientes->get(turnosPendientes->pElements+i);
+            if(proximo->prioridad==HIGH)
+            {
+                //flag=0;
+                //proximo=turnosPendientes->pop(turnosPendientes,i);
+                //turnosAtendidos->add(turnosAtendidos,proximo);
+                turno_mostrarTramite(proximo);
+                break;
+            }
+
+        }
+        /*if(flag)
+        {
+            for(i=0; i<turnosPendientes->size; i++)
+            {
+                proximo=turnosPendientes->get(turnosPendientes->pElements+i);
+                if(proximo->prioridad==LOW)
+                {
+                    proximo=turnosPendientes->pop(turnosPendientes,i);
+                    turnosAtendidos->add(turnosAtendidos,proximo);
+                    turno_mostrarTramite(proximo);
+                    break;
+                }
+
+            }
+        }*/
+    }
 
 }
 
-void listarPendientes (ArrayList* turnosTotales)
+void listarPendientes (ArrayList* turnosPendientes)
 {
 
 }
@@ -115,10 +137,45 @@ int turno_getDni(void)
     int aux;
     aux = ingresoStringNumerico("DNI");
     aux = validarDatoMaxMin(aux,"DNI",1000000,99999999);
+
     return aux;
 }
 
+void turno_mostrarTramite (eTramites* tramite)
+{
+    printf("DNI: %d / TIPO DE TRAMITE: ",tramite->dni);
+    switch(tramite->prioridad)
+    {
+    case HIGH:
+        printf("URGENTE");
+        break;
+    case LOW:
+        printf("REGULAR");
+        break;
+    }
+    printf(" / TURNO: %d\n",tramite->turno);
+}
 
+int confirmar(void)
+{
+    char respuesta;
+    int flag = 0;
+    do
+    {
+        if(flag)
+        {
+            printf("\nRespuesta incorrecta, ingrese s por SI o n por NO...");
+        }
+        respuesta = getche();
+        respuesta = tolower(respuesta);
+        flag = 1;
+    }
+    while(respuesta!='s'&&respuesta!='n');
+    if(respuesta=='s')
+        return 1;
+    else
+        return 0;
+}
 
 ///validar strings
 

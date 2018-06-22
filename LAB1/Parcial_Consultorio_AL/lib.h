@@ -15,7 +15,6 @@ typedef struct{
 typedef struct{
 
     int dni;
-    int estado;
     int prioridad;
     int turno;
 
@@ -28,11 +27,19 @@ typedef struct{
  */ int menuPrincipal (void);
 
 
-void tramiteUrgente (ArrayList* turnosTotales, int* turno);
-void tramiteRegular (ArrayList* turnosTotales, int* turno);
-void proximoCliente(ArrayList* turnosTotales);
+ /** \brief pide respuesta por si o por no
+ * \param void
+ * \return int [1] por si, [0] por no.
+ */ int confirmar(void);
+
+
+
+void tramiteUrgente (ArrayList* turnosTotales);
+void tramiteRegular (ArrayList* turnosTotales);
+void proximoCliente(ArrayList* turnosTotales, ArrayList* turnosAtendidos);
 
 int turno_getDni(void);
+void turno_mostrarTramite (eTramites* tramite);
 
 
 

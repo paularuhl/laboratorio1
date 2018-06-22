@@ -5,13 +5,8 @@ int main()
 {
     //eGen genStruct;
     //char* fileName=(char*)malloc(sizeof(char)*50);
-    ArrayList* turnosTotales=al_newArrayList();
-    ArrayList* turnosAtendidos=al_newArrayList();
     ArrayList* turnosPendientes=al_newArrayList();
-    int turno = 0;
-    int* pTurno = &turno;
-
-
+    ArrayList* turnosAtendidos=al_newArrayList();
     int opcion;
     char salir='n';
 
@@ -21,17 +16,19 @@ int main()
         switch(opcion)
         {
         case 1:
-            tramiteUrgente(turnosTotales,pTurno);
+            tramiteUrgente(turnosPendientes);
             printf("\n");
             system("pause");
             system("cls");
             break;
         case 2:
+            tramiteRegular(turnosPendientes);
             printf("\n");
             system("pause");
             system("cls");
             break;
         case 3:
+            proximoCliente(turnosPendientes, turnosAtendidos);
             printf("\n");
             system("pause");
             system("cls");
