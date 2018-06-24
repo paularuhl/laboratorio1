@@ -344,3 +344,23 @@ int gen_compararItem(void* itemA, void* itemB)
 
     return strcmp(item1->stringUno,item2->stringUno);
 }
+
+
+void gen_parseData(char* fn, ArrayList* l)
+{
+    FILE* fp;
+    eGen* g;
+    char stringUno[30];
+    fp = fopen(fn,"r");
+    if(fp!=NULL)
+    {
+        do
+        {
+            g=gen_newStruct();
+            fscanf(fp,"%[^,],%[^\n]\n",stringUno,stringUno);
+            gen_setString(g,stringUno);
+            l->add(l,g);
+        }
+        while(!feof(fp));
+    }
+}
