@@ -3,64 +3,45 @@
 #include "lib.h"
 int main()
 {
-    //eGen genStruct;
     char* fileName=(char*)malloc(sizeof(char)*50);
-    ArrayList* empleadosTotales;
-    ArrayList* empleadosDespedidos;
-    ArrayList* empleadosActuales;
+    ArrayList* listaUno=al_newArrayList();
+    ArrayList* listaDos=al_newArrayList();
+    ArrayList* listaTres=al_newArrayList();
 
     int opcion;
     char salir='n';
 
     do
     {
-        opcion = menuPrincipal();
+        opcion = generic_menu();
         switch(opcion)
         {
         case 1:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         case 2:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         case 3:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         case 4:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         case 5:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         /*case 6:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         case 7:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         case 8:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
         case 9:
-            printf("\n");
-            system("pause");
-            system("cls");
+            generic_finFuncion();
             break;
             */
         case 0:

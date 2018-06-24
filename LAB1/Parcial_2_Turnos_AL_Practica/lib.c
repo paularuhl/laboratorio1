@@ -15,7 +15,6 @@ int generic_menuPrincipal (void)
 {
     int opcion;
 
-    fflush(stdin);
     printf("Sitio principal\n");
     printf("1. Tramite Urgente\n");
     printf("2. Tramite Regular\n");
@@ -28,7 +27,7 @@ int generic_menuPrincipal (void)
     //printf("9. III\n");
     printf("\n0. Salir\n");
 
-    opcion = string_ingresoEntero("opcion");
+    opcion = entero_get("opcion");
 
     return opcion;
 }
@@ -38,6 +37,27 @@ void generic_finFuncion (void)
     printf("\n");
     system("pause");
     system("cls");
+}
+
+int generic_confirmar(void)
+{
+    char respuesta;
+    int flag = 0;
+    do
+    {
+        if(flag)
+        {
+            printf("\nRespuesta incorrecta, ingrese s por SI o n por NO: ");
+        }
+        respuesta = getche();
+        respuesta = tolower(respuesta);
+        flag = 1;
+    }
+    while(respuesta!='s'&&respuesta!='n');
+    if(respuesta=='s')
+        return 1;
+    else
+        return 0;
 }
 
 
@@ -257,27 +277,6 @@ int turno_compararDni(void* tramiteA, void* tramiteB)
     return strcmp(tramite1->dni,tramite2->dni);
 }
 
-int generic_confirmar(void)
-{
-    char respuesta;
-    int flag = 0;
-    do
-    {
-        if(flag)
-        {
-            printf("\nRespuesta incorrecta, ingrese s por SI o n por NO...");
-        }
-        respuesta = getche();
-        respuesta = tolower(respuesta);
-        flag = 1;
-    }
-    while(respuesta!='s'&&respuesta!='n');
-    if(respuesta=='s')
-        return 1;
-    else
-        return 0;
-}
-
 ///validar strings
 
 int string_isNull (char value)
@@ -374,15 +373,6 @@ int string_esDescriptivo(char array[])
     return 1;
 }
 
-int validarDatoMaxMin(int dato, char mensaje[], int min, int max)
-{
-    while((dato < min) || (dato > max))
-    {
-        printf("El item *%s* debe estar entre %d y %d.\n",mensaje,min,max);
-        dato = string_ingresoEntero(mensaje);
-    }
-    return dato;
-}
 
 int string_validaRango(char str[], int min, int max)
 {
@@ -441,19 +431,27 @@ int string_getLetras(char mensaje[],char input[])
     return 0;
 }
 
-int string_ingresoEntero(char mensaje[])
+int entero_get(char mensaje[])
 {
     char auxDato[20];
     int dato;
     printf("\nIngrese %s:",mensaje);
-    string_get(" ",auxDato);
-    while(!string_esNumerico(auxDato))
+    while(!string_getNumerico(" ",auxDato))
     {
-        printf("*%s* solo puede estar compuesto por numeros.\nReingrese %s: ",mensaje,mensaje);
-        fflush(stdin);
-        gets(auxDato);
+        printf("Error, *%s* solo puede estar compuesto por numeros. Reingrese %s:",mensaje,mensaje);
     }
     dato = atoi(auxDato);
 
     return dato;
+}
+
+int entero_validaRango(int dato, char mensaje[], int min, int max)
+{
+    if(dato >= min && dato <= max)
+        return 1;
+    else
+    {
+        printf("El item *%s* debe estar entre %d y %d.\n",mensaje,min,max);
+        return 0;
+    }
 }

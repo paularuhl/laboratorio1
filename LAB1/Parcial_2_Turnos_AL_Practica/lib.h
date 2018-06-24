@@ -123,7 +123,7 @@ int string_validaRango(char str[], int min, int max);
  * \brief Verifica si la cadena ingresada es numerica y de no serlo muestra mensaje de error
  * \param str Array con la cadena a ser analizada
  * \return int valor cambiado a entero
- */ int string_ingresoEntero(char mensaje[]);
+ */ int entero_get(char mensaje[]);
 
 
 
