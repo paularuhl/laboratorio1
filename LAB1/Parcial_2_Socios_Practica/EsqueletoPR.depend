@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1529253537 source:c:\users\palu\desktop\gitrepo\esqueletopr\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+
+1529253587 c:\users\palu\desktop\gitrepo\esqueletopr\lib.h
+
+1529253468 source:c:\users\palu\desktop\gitrepo\esqueletopr\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1529253310 source:c:\users\palu\desktop\gitrepo\esqueletopr\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529253411 c:\users\palu\desktop\gitrepo\esqueletopr\arraylist.h
+
+1529594685 source:c:\users\palu\desktop\utnstuff\lab1\esqueleto_pr_al\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1529594685 c:\users\palu\desktop\utnstuff\lab1\esqueleto_pr_al\arraylist.h
+
+1529803031 source:c:\users\palu\desktop\utnstuff\lab1\esqueleto_pr_al\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+
+1529803176 c:\users\palu\desktop\utnstuff\lab1\esqueleto_pr_al\lib.h
+	"ArrayList.h"
+
+1529803200 source:c:\users\palu\desktop\utnstuff\lab1\esqueleto_pr_al\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+

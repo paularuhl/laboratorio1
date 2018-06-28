@@ -32,6 +32,7 @@ void main_depurar(ArrayList* listaA, ArrayList* listaB, ArrayList* depurados)
 {
     filtroBlacklist(listaA,listaB,depurados);
     filtroRepetidos(depurados);
+    dest_archivarDepurados(depurados);
     generic_finFuncion();
 }
 
@@ -119,6 +120,30 @@ void dest_mostrarLista(ArrayList* lista)
     generic_finFuncion();
 }
 
+void dest_archivarDepurados(ArrayList* lista)
+{
+    eDestinatario* d;
+    FILE* fp;
+    int i;
+    char fileName[50]="depurado.csv";
+    if(lista!=NULL)
+    {
+        fp=fopen(fileName,"w");
+        if(fp!=NULL)
+        {
+            for(i=0;i<lista->len(lista);i++)
+            {
+                    d=(eDestinatario*) lista->get(lista,i);
+                    fprintf(fp,"%s,%s\n",dest_getName(d),dest_getMail(d));
+            }
+        }
+        fclose(fp);
+    }
+    else
+    {
+        printf("No se pudo generar un archivo.");
+    }
+}
 
 void dest_parseData(char* fn, ArrayList* l)
 {
@@ -139,6 +164,7 @@ void dest_parseData(char* fn, ArrayList* l)
         }
         while(!feof(fp));
     }
+    fclose(fp);
 }
 char* dest_getName (eDestinatario* d)
 {

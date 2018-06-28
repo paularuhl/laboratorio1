@@ -41,6 +41,8 @@ typedef struct{
  * \return void
  */ void dest_parseData(char* fn, ArrayList* l);
 
+ void dest_archivarDepurados(ArrayList* lista);
+
 /** \brief Crea una nueva lista en base a una lista original y una blacklist
  * \param listaA ArrayList* lista de datos a evaluar
  * \param listaB ArrayList* lista de datos a eliminar
