@@ -46,7 +46,7 @@ struct ArrayList{
 
 /** \brief filtra una lista en base a X criterio
  *
- * \param ArrayList* a filtrar, funcion que filtra
+ * \param ArrayList* a filtrar, *functionFilter funcion que filtra
  * \return ArrayList* nueva arrayList con el filtro aplicado
  *
  */

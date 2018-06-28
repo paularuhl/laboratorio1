@@ -9,67 +9,157 @@ typedef struct{
     int edad;
     int salary;
     char name[40];
-    char Profesion[10];
+    char profesion[10];
 
 }eEmp;
 
-void emp_newName(eEmp* s);
-void emp_newEdad(eEmp* s);
-int emp_newProfesion(eEmp* s);
-void emp_newSalary(eEmp* s,int prof);
-void emp_newId(eEmp* s,int* id);
-void emp_newState(eEmp* s,int st);
-eEmp* emp_newStruct();
-
-void main_alta(ArrayList* socio, int* id);
-
-char* emp_getName (eEmp* s);
-char* emp_getProfesion (eEmp* s);
-int emp_getSalary(eEmp* s);
-int emp_getState(eEmp* s);
-int emp_getId(eEmp* s);
-int emp_getEdad(eEmp* s);
+/** \brief aloja memoria para estructura de empleado
+ *
+ * \return eEmp* puntero a dir de memoria que se alojó
+ */ eEmp* emp_newStruct();
 
 
-void emp_setName(eEmp* s, char* name);
-void emp_setProfesion(eEmp* s, char* Profesion);
-void emp_setSalary (eEmp* s, int salary);
-void emp_setEdad (eEmp* s, int edad);
 
-int main_cargarAnteriores(ArrayList* l);
-void main_archivar(ArrayList* lista);
-
-void emp_mostrarLista(ArrayList* lista);
-void emp_mostrarUno (eEmp* s);
-void main_modificar(ArrayList* lista);
-void main_mostrarLista(ArrayList* lista);
-void main_baja(ArrayList* lista);
-
-
-void emp_printProfesion(int Profesion);
-
-int funcionQueFiltra(void* empleado);
-void filtrado(ArrayList* empleados,ArrayList* programadores);
-
-
-/** \brief muestra un menu principal generico
- * \param void
- * \return int opcion ingresada
- */ int generic_menu (void);
-
-/** \brief agrega un "\n", pausa la aplicacion,
- * y limpia la pantalla al finalizar un case en el main
- * \param void
+/*************************************************************/
+///NEW SETTERS -- ALTA O MODIFICACION -- piden por pantalla///
+/***********************************************************/
+/** \brief pide ingresar un nombre para empleado
+ *
+ * \param s eEmp* estructura empleado
  * \return void
- */ void generic_finFuncion (void);
+ */ void emp_newName(eEmp* s);
+
+/** \brief pide ingresar una edad para empleado, entre 18 y 99.
+ *
+ * \param s eEmp* estructura empleado
+ * \return void
+ */ void emp_newEdad(eEmp* s);
+
+/** \brief pide seleccionar opcion de profesion para empleado
+ *
+ * \param s eEmp* estructura empleado
+ * \return int numero de acuerdo a profesion para poder setear salario
+ */ int emp_newProfesion(eEmp* s);
+
+/** \brief setea un salario para empleado de acuerdo a la profesion
+ *
+ * \param s eEmp* estructura empleado, prof int indicador de profesion
+ * \return void
+ */ void emp_newSalary(eEmp* s,int prof);
 
 
- /** \brief pide respuesta por si o por no
- * \param void
- * \return int [1] por si, [0] por no.
- */ int generic_confirmar(void);
+/**************/
+/// SETTERS ///
+/************/
+/** \brief setea nombre de empleado
+ *
+ * \param s eEmp* estructura empleado, name char*.
+ * \return void
+ */ void emp_setName(eEmp* s, char* name);
 
- ///validar strings
+/** \brief setea nombre de empleado
+ *
+ * \param s eEmp* estructura empleado, Profesion char*.
+ * \return void
+ */ void emp_setProfesion(eEmp* s, char* Profesion);
+
+/** \brief setea salario de empleado
+ *
+ * \param s eEmp* estructura empleado, int salary.
+ * \return void
+ */ void emp_setSalary (eEmp* s, int salary);
+
+/** \brief setea salario de empleado
+ *
+ * \param s eEmp* estructura empleado, int edad.
+ * \return void
+ */ void emp_setEdad (eEmp* s, int edad);
+
+ /** \brief setea el id de un empleado
+ *
+ * \param s eEmp* estructura empleado,  id int* puntero a id autoincremental
+ * \return void
+ */ void emp_setId(eEmp* s,int* id);
+
+/** \brief setea el estado de un empleado
+ *
+ * \param s eEmp*
+ * \param st int estado a setear
+ * \return void
+ */ void emp_setState(eEmp* s,int st);
+
+
+/**************/
+/// GETTERS ///
+/************/
+
+/** \brief devuelve el nombre del empleado
+ *
+ * \param s eEmp* estructura empleado
+ * \return char* nombre
+ */ char* emp_getName (eEmp* s);
+
+ /** \brief devuelve la profesion del empleado
+ *
+ * \param s eEmp* estructura empleado
+ * \return char* profesion
+ */ char* emp_getProfesion (eEmp* s);
+
+/** \brief devuelve el salario del empleado
+ *
+ * \param s eEmp* estructura empleado
+ * \return int salario
+ */ int emp_getSalary(eEmp* s);
+
+/** \brief devuelve el estado del empleado
+ *
+ * \param s eEmp* estructura empleado
+ * \return int estado
+ */ int emp_getState(eEmp* s);
+
+/** \brief devuelve el id del empleado
+ *
+ * \param s eEmp* estructura empleado
+ * \return int id
+ */ int emp_getId(eEmp* s);
+
+/** \brief devuelve la edad del empleado
+ *
+ * \param s eEmp*
+ * \return int edad
+ */ int emp_getEdad(eEmp* s);
+
+
+/************/
+/// OTRAS ///
+/**********/
+
+/** \brief evalua empleado en base a un criterio (mayor de 30, programador)
+ *
+ * \param empleado void*
+ * \return int [1] si pasa el filtro, [0] si no
+ */ int funcionQueFiltra(void* empleado);
+
+
+/**************************************************************************/
+///visuales (mostrar listas, menues extras)
+/** \brief muestra una estructura de empleado
+ *
+ * \param eEmp* e estructura a mostrar
+ * \return void
+ */ void emp_mostrarUno (eEmp* e);
+
+/** \brief muestra una lista
+ *
+ * \param lista ArrayList*
+ * \return void
+ */ void main_mostrarLista(ArrayList* lista);
+
+
+
+
+/**************************************************************************/
+///validar strings
 
 /** \brief verifica si un dato ingresado está vacío o no
  * \param char value es el valor a analizar
@@ -107,8 +197,7 @@ void filtrado(ArrayList* empleados,ArrayList* programadores);
  * \return int numero validado
  */ int validarDatoMaxMin(int dato, char mensaje[], int min, int max);
 
-int string_validaRango(char str[], int min, int max);
-
+/**************************************************************************/
  ///get strings
 /**
  * \brief Solicita un texto al usuario y lo devuelve
@@ -145,19 +234,49 @@ int string_validaRango(char str[], int min, int max);
  * \return int valor cambiado a entero
  */ int entero_get(char mensaje[]);
 
-int entero_validaRango(int dato, char mensaje[], int min, int max);
+/** \brief valida un entero dentro de un rango
+ *
+ * \param int dato a evaluar
+ * \param mensaje[] char visual de que es lo que se ingreso
+ * \param min int, max int
+ * \return int [1] si esta dentro del rango, [0] si no
+ */ int entero_validaRango(int dato, char mensaje[], int min, int max);
 
+/**************************************************************************/
 ///genericas
 
-/*eGen* gen_nuevaEstructura();
-void gen_setString(eGen* g);
-void gen_setEntero(eGen* g);
-int gen_getEntero(eGen* g);
-char* gen_getString (eGen* g);
-void gen_mostrarUno (eGen* g);
-void gen_mostrarLista(ArrayList* lista);
+/** \brief muestra un menu principal generico
+ * \param void
+ * \return int opcion ingresada
+ */ int generic_menu (void);
+
+/** \brief agrega un "\n", pausa la aplicacion,
+ * y limpia la pantalla al finalizar un case en el main
+ * \param void
+ * \return void
+ */ void generic_finFuncion (void);
+
+ /** \brief pide respuesta por si o por no
+ * \param void
+ * \return int [1] por si, [0] por no.
+ */ int generic_confirmar(void);
+
+
+/** \brief pide los datos para dar de alta un nuevo empleado
+ *
+ * \param socio ArrayList* lista de empleados
+ * \param id int* puntero a id auto-incremental
+ * \return void
+ */ void generic_alta(ArrayList* lista, int* id);
+
+
+/*
+void main_baja(ArrayList* lista);
+void main_modificar(ArrayList* lista);
 void gen_pasarAOtraLista(ArrayList* listaA, ArrayList* listaB);
 int gen_compararItem(void* itemA, void* itemB);
 */
+
+
 
 #endif // LIB_H_INCLUDED

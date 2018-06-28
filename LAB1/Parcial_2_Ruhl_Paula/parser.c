@@ -8,44 +8,42 @@
 #include "parser.h"
 
 
-int main_parseIn(ArrayList* l,char filename[])
+int parseIn(ArrayList* l,char filename[])
 {
     FILE* fp;
     eEmp* s;
     int id=0;
     int estado, edad, salary;
     char name[40];
-    char Profesion[40];
+    char profesion[40];
     fp = fopen(filename,"r");
     if(fp!=NULL&&l!=NULL)
     {
         do
         {
             s=emp_newStruct();
-            fscanf(fp,"%d,%d,%d,%d,%[^,],%[^\n]\n",&id,&estado,&salary,&edad,Profesion,name);
-            s->idEmpleado=id;
-            s->estado=estado;
+            fscanf(fp,"%d,%d,%d,%d,%[^,],%[^\n]\n",&id,&estado,&salary,&edad,profesion,name);
+            emp_setId(s,&id);
+            emp_setState(s,estado);
             emp_setName(s,name);
-            emp_setProfesion(s,Profesion);
+            emp_setProfesion(s,profesion);
             emp_setSalary(s,salary);
             emp_setEdad(s,edad);
             l->add(l,s);
         }
         while(!feof(fp));
-        printf("**");
+        printf("***************\n");
     }
     else
     {
-        printf("++");
+        printf("~~~~~~~~~~~~~~~\n");
     }
     fclose(fp);
 
     return id;
 }
 
-
-
-void main_parseOut(ArrayList* lista,char filename[])
+void parseOut(ArrayList* lista,char filename[])
 {
     eEmp* s;
     FILE* fp;

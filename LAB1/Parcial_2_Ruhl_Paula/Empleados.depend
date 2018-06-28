@@ -1,0 +1,41 @@
+# depslib dependency file v1.0
+1530221621 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_ruhl_paula\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530221686 c:\users\palu\desktop\utnstuff\lab1\parcial_2_ruhl_paula\arraylist.h
+
+1530223548 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_ruhl_paula\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"parser.h"
+
+1530223396 c:\users\palu\desktop\utnstuff\lab1\parcial_2_ruhl_paula\lib.h
+	"ArrayList.h"
+
+1530223548 c:\users\palu\desktop\utnstuff\lab1\parcial_2_ruhl_paula\parser.h
+	"ArrayList.h"
+
+1530223555 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_ruhl_paula\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"parser.h"
+
+1530223548 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_ruhl_paula\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"parser.h"
+
