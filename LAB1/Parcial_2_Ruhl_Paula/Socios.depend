@@ -49,3 +49,43 @@
 	<stdlib.h>
 	"lib.h"
 
+1530196360 source:d:\ruhl paula\utnstuff\lab1\parcial_2_ruhl_paula\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"parser.h"
+
+1530196111 d:\ruhl paula\utnstuff\lab1\parcial_2_ruhl_paula\lib.h
+	"ArrayList.h"
+
+1530188444 d:\ruhl paula\utnstuff\lab1\parcial_2_ruhl_paula\arraylist.h
+
+1530196495 source:d:\ruhl paula\utnstuff\lab1\parcial_2_ruhl_paula\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"parser.h"
+
+1530189194 source:d:\ruhl paula\utnstuff\lab1\parcial_2_ruhl_paula\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530196327 d:\ruhl paula\utnstuff\lab1\parcial_2_ruhl_paula\parser.h
+	"ArrayList.h"
+
+1530196318 source:d:\ruhl paula\utnstuff\lab1\parcial_2_ruhl_paula\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"parser.h"
+

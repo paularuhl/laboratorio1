@@ -5,9 +5,18 @@
 #include <conio.h>
 #include "lib.h"
 #include "ArrayList.h"
+#include "parser.h"
 
 #define INACTIVO 0
 #define ACTIVO 1
+#define AN 4
+#define PR 5
+#define TE 6
+
+
+//int funcionQueFiltra(void* empleado)
+
+
 
 int modificar_menu (void)
 {
@@ -26,31 +35,33 @@ int modificar_menu (void)
 }
 void main_alta(ArrayList* lista, int* id)
 {
-    eSoc* s;
+    eEmp* s;
+    int sal;
     system("cls");
 
+    printf("\n**ALTA EMPLEADO**");
+    s=emp_newStruct();
+    emp_newName(s);
+    emp_newEdad(s);
+    sal=emp_newProfesion(s);
+    emp_newSalary(s,sal);
+    emp_newId(s,id);
+    emp_newState(s,1);
 
-    printf("\n**ALTA SOCIO**");
-    s=socio_newStruct();
-    alta_newName(s);
-    alta_newSurname(s);
-    alta_newDni(s);
-    alta_newId(s,id);
-    alta_newState(s,1);
-
-    printf("\nDar de alta socio? s/n: ");
+    printf("\nDar de alta empleado? s/n: ");
     if(generic_confirmar())
     {
         lista->add(lista,s);
-        main_archivar(lista);
+        main_parseOut(lista,"empleados.csv");
     }
     generic_finFuncion();
 }
-
+/*
 void main_modificar(ArrayList* lista)
 {
-    eSoc* s;
-    eSoc* aux;
+
+    eEmp* s;
+    eEmp* aux;
     int id=-1, i=0, volver=0;
     int opcion;
     printf("\n**MODIFICACION SOCIO**");
@@ -68,7 +79,7 @@ void main_modificar(ArrayList* lista)
     {
         system("cls");
 
-        socio_mostrarUno(s);
+        emp_mostrarUno(s);
         opcion=modificar_menu();
         switch(opcion)
         {
@@ -82,7 +93,7 @@ void main_modificar(ArrayList* lista)
             }
             break;
         case 2:
-            alta_newSurname(aux);
+            alta_newProfesion(aux);
             printf("\nConfirmar cambios? s/n: ");
             if(generic_confirmar())
             {
@@ -110,10 +121,12 @@ void main_modificar(ArrayList* lista)
     while(!volver);
     system("cls");
 }
-
+*/
+/*
 void main_baja(ArrayList* lista)
 {
-    eSoc* s;
+
+    eEmp* s;
     int id=-1, i=0;
     printf("\n**BAJA SOCIO**");
     id=entero_get("id de socio");
@@ -127,7 +140,7 @@ void main_baja(ArrayList* lista)
     }
     system("cls");
 
-    socio_mostrarUno(s);
+    emp_mostrarUno(s);
 
     printf("\nDar de baja socio? s/n: ");
     if(generic_confirmar())
@@ -136,33 +149,41 @@ void main_baja(ArrayList* lista)
         main_archivar(lista);
     }
 }
-
-void socio_setName(eSoc* s, char* name)
+*/
+void emp_setName(eEmp* s, char* name)
 {
     if(s!=NULL)
     {
         strcpy(s->name,name);
     }
 }
-void socio_setSurname(eSoc* s, char* surname)
+void emp_setSalary (eEmp* s, int salary)
 {
     if(s!=NULL)
     {
-        strcpy(s->surname,surname);
+        s->salary=salary;
     }
 }
-void socio_setDni(eSoc* s, char* dni)
+
+void emp_setEdad (eEmp* s, int edad)
 {
     if(s!=NULL)
     {
-        strcpy(s->dni,dni);
+        s->edad=edad;
+    }
+}
+void emp_setProfesion(eEmp* s, char* Profesion)
+{
+    if(s!=NULL)
+    {
+        strcpy(s->Profesion,Profesion);
     }
 }
 
 
 
 
-void alta_newName(eSoc* s)
+void emp_newName(eEmp* s)
 {
     char aux[40];
     if(s!=NULL)
@@ -176,87 +197,106 @@ void alta_newName(eSoc* s)
         strcpy(s->name,aux);
     }
 }
-void alta_newSurname(eSoc* s)
+int emp_newProfesion(eEmp* s)
 {
-    char aux[40];
+    int opcion;
     if(s!=NULL)
     {
-        while(!string_getLetras("\nIngrese apellido: ",aux))
+        printf("\nCual es la profesion del nuevo empleado?\n1.Analista\n2.Programador\n3.Tester");
+        opcion=entero_get("opcion");
+        switch(opcion)
         {
-            printf("Error, el apellido solo puede ser letras.");
+        case 1:
+            strcpy(s->Profesion,"Analista");
+            break;
+        case 2:
+            strcpy(s->Profesion,"Programador");
+            break;
+        case 3:
+            strcpy(s->Profesion,"Tester");
+            break;
         }
-        strlwr(aux);
-        *(aux+0)=toupper(*aux+0);
-        strcpy(s->surname,aux);
+    }
+    return opcion;
+}
+
+
+
+void emp_printProfesion(int Profesion)
+{
+    switch(Profesion)
+    {
+    case AN:
+        printf("Analista");
+        break;
+    case PR:
+        printf("Programador");
+        break;
+    case TE:
+        printf("Tester");
+        break;
     }
 }
-void alta_newDni(eSoc* s)
+void emp_newSalary(eEmp* s, int prof)
 {
-    char aux[9];
     if(s!=NULL)
     {
-        do
+        switch(prof)
         {
-            while(!string_getNumerico("\nIngrese DNI: ",aux))
-            {
-                printf("Error, el DNI solo puede ser numeros.");
-            }
+        case 1:
+            s->salary=15000;
+            break;
+        case 2:
+            s->salary=20000;
+            break;
+        case 3:
+            s->salary=10000;
+            break;
         }
-        while(!string_validaRango(aux,1000,9999));
-        strcpy(s->dni,aux);
     }
 }
-void alta_newState(eSoc* s,int st)
+void emp_newState(eEmp* s,int st)
 {
     if(s!=NULL)
     {
         s->estado=st;
     }
 }
-void alta_newId(eSoc* s,int* id)
+
+void emp_newEdad(eEmp* s)
+{
+    int aux;
+    if(s!=NULL)
+    {
+        do
+        {
+            aux=entero_get("edad");
+        }
+        while(!entero_validaRango(aux,"edad",18,99));
+        s->edad=aux;
+    }
+
+}
+void emp_newId(eEmp* s,int* id)
 {
     if(s!=NULL)
     {
-        s->idSocio=*id;
+        s->idEmpleado=*id;
     }
 }
 
 
-eSoc* socio_newStruct()
+eEmp* emp_newStruct()
 {
-    eSoc* aux;
+    eEmp* aux;
 
-    aux=(eSoc*)malloc(sizeof(eSoc));
+    aux=(eEmp*)malloc(sizeof(eEmp));
 
     return aux;
 }
 
 
 
-void main_archivar(ArrayList* lista)
-{
-    eSoc* s;
-    FILE* fp;
-    int i;
-    char fileName[50]="socios.csv";
-    if(lista!=NULL)
-    {
-        fp=fopen(fileName,"w");
-        if(fp!=NULL)
-        {
-            for(i=0; i<lista->len(lista); i++)
-            {
-                s=(eSoc*) lista->get(lista,i);
-                fprintf(fp,"%d,%d,%s,%s,%s\n",socio_getId(s),socio_getState(s),socio_getName(s),socio_getSurname(s),socio_getDni(s));
-            }
-        }
-        fclose(fp);
-    }
-    else
-    {
-        printf("No se pudo generar un archivo.");
-    }
-}
 
 ///genericas
 int generic_menu (void)
@@ -266,8 +306,8 @@ int generic_menu (void)
     fflush(stdin);
     printf("Sitio principal\n");
     printf("1. Alta\n");
-    printf("2. Baja\n");
-    printf("3. Modificacion\n");
+    printf("2. Filtrar Prog +30\n");
+    //printf("3. Modificacion\n");
     printf("4. Listar\n");
     //printf("5. 555\n");
     printf("\n0. Salir\n");
@@ -309,18 +349,27 @@ int generic_confirmar(void)
 
 
 
+int emp_getEdad(eEmp* s)
+{
+    int edad;
+    if(s!=NULL)
+    {
+        edad=s->edad;
+    }
+    return edad;
+}
 
 
-int socio_getId(eSoc* s)
+int emp_getId(eEmp* s)
 {
     int id;
     if(s!=NULL)
     {
-        id=s->idSocio;
+        id=s->idEmpleado;
     }
     return id;
 }
-int socio_getState(eSoc* s)
+int emp_getState(eEmp* s)
 {
     int st;
     if(s!=NULL)
@@ -329,25 +378,25 @@ int socio_getState(eSoc* s)
     }
     return st;
 }
-char* socio_getDni (eSoc* s)
+int emp_getSalary (eEmp* s)
 {
-    char* str=NULL;
+    float aux;
     if(s!=NULL)
     {
-        str=s->dni;
+        aux=s->salary;
+    }
+    return aux;
+}
+char* emp_getProfesion(eEmp* s)
+{
+    char* str;
+    if(s!=NULL)
+    {
+        str=s->Profesion;
     }
     return str;
 }
-char* socio_getSurname (eSoc* s)
-{
-    char* str=NULL;
-    if(s!=NULL)
-    {
-        str=s->surname;
-    }
-    return str;
-}
-char* socio_getName (eSoc* s)
+char* emp_getName (eEmp* s)
 {
     char* str=NULL;
     if(s!=NULL)
@@ -364,38 +413,6 @@ char* socio_getName (eSoc* s)
 
 
 
-int main_cargarAnteriores(ArrayList* l)
-{
-    FILE* fp;
-    eSoc* s;
-    int id=0;
-    int estado;
-    char name[40];
-    char surname[40];
-    char dni[9];
-    fp = fopen("socios.csv","r");
-    if(fp!=NULL)
-    {
-        do
-        {
-            s=socio_newStruct();
-            fscanf(fp,"%d,%d,%[^,],%[^,],%[^\n]\n",&id,&estado,name,surname,dni);
-            s->idSocio=id;
-            s->estado=estado;
-            socio_setName(s,name);
-            socio_setSurname(s,surname);
-            socio_setDni(s,dni);
-            l->add(l,s);
-        }
-        while(!feof(fp));
-        printf("**");
-    }
-    else
-    {
-        printf("+");
-    }
-    return id;
-}
 
 
 int string_isNull (char value)
@@ -580,12 +597,12 @@ int entero_validaRango(int dato, char mensaje[], int min, int max)
 
 
 
-void socio_mostrarUno (eSoc* s)
+void emp_mostrarUno (eEmp* s)
 {
     if(s!=NULL)
     {
         printf("\nID\t| DNI\t| Nombre\t| Apellido");
-        printf("\n%d\t| %s\t| %s\t| %s",s->idSocio,socio_getDni(s),socio_getName(s),socio_getSurname(s));
+        printf("\n%d\t| %d\t| %s\t| %s",emp_getId(s),emp_getSalary(s),emp_getName(s),emp_getProfesion(s));
     }
 }
 
@@ -595,20 +612,47 @@ void socio_mostrarUno (eSoc* s)
 void main_mostrarLista(ArrayList* lista)
 {
     int i, len;
-    eSoc* g;
+
+    eEmp* g;
     if(lista!=NULL)
     {
         len=lista->len(lista);
-        printf("\nID\t| DNI\t| Nombre\t| Apellido");
+        printf("\nID\t| Salary\t| Profesion\t| Edad\t| Nombre\n");
         for(i=0; i<len; i++)
         {
             g=lista->get(lista,i);
-            if(g->estado!=0)
+            if(emp_getState(g)!=0)
             {
-            printf("\n%d\t| %s\t| %s\t| %s",g->idSocio,socio_getDni(g),socio_getName(g),socio_getSurname(g));
+                printf("\n%d\t| $%d\t| %s\t| %d\t| %s",emp_getId(g),emp_getSalary(g),emp_getProfesion(g),emp_getEdad(g),emp_getName(g));
             }
         }
+        printf("\n");
     }
+}
+
+
+
+
+int funcionQueFiltra(void* empleado)
+{
+    int r=0;
+    eEmp* e;
+    e = (eEmp*)empleado;
+    if(empleado!=NULL)
+    {
+        if(emp_getEdad(e)>30)
+        {
+            if(strcmp(emp_getProfesion(e),"Programador")==0)
+            {
+                r=1;
+            }
+        }
+        else
+        {
+            r=0;
+        }
+    }
+    return r;
 }
 
 ///funciones para implementacion de arraylist
