@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1463488858 source:k:\pruebastatic\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+
+1463488858 .h"
+
+1463488500 k:\pruebastatic\arraylist.h
+
+1463505889 source:/home/mauro/Descargas/ARRAY_LIB/LINUX_64/main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1464384471 h"
+
+1463505431 /home/mauro/Descargas/ARRAY_LIB/LINUX_64/ArrayList.h
+
+1463505760 source:/home/mauro/Descargas/ARRAY_LIB/LINUX_64/Employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1463505789 /home/mauro/Descargas/ARRAY_LIB/LINUX_64/Employee.h
+
+1464384445 source:c:\users\profesor\desktop\example4_static_lib\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1463604778 c:\users\profesor\desktop\example4_static_lib\win_64\arraylist.h
+
+1464384298 c:\users\profesor\desktop\example4_static_lib\win_64\employee.h
+
+1464384349 source:c:\users\profesor\desktop\example4_static_lib\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1464384471 source:c:\users\profesor\desktop\example4_static_lib\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1510079654 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Controlador.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Socio.h"
+	"Vista.h"
+
+1463604778 /home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/ArrayList.h
+
+1510078897 /home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Socio.h
+	"ArrayList.h"
+
+1510078781 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/DataManager.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Socio.h"
+
+1510078866 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Socio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Socio.h"
+
+1510079935 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+
+1509998002 /home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Validaciones.h
+
+1510080963 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Vista.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Validaciones.h"
+	"Socio.h"
+	"ArrayList.h"
+	"Vista.h"
+	"Controlador.h"
+
+1510079654 /home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Vista.h
+
+1510077928 source:/home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/main.c
+	<stdio.h>
+	<stdlib.h>
+	"Controlador.h"
+
+1510079018 /home/mauro/Descargas/Practica_Pair_v1.2/Linux_64/Controlador.h
+
