@@ -6,11 +6,12 @@
 
 /** \brief ingresa datos desde un archivo hacia un array de estructuras
  * \param l ArrayList*
- * \return int ultimo id de empleado para poder igresar uno nuevo en caso de que sea necesario
- */ int parseIn(ArrayList* l,char filename[],int* id);
+ * \param char filename nombre de archivo
+ * \return int if filepointer is null[-1], else [ultimoID]
+ */ int txt_parseIn(ArrayList* l,char filename[]);
 
  /** \brief egresa datos desde un array de estructura hacia un archivo .csv
  * \param l ArrayList*
- * \return void
- */ int parseOut(ArrayList* l,char filename[]);
+ * \return int if lista a cargar is null[-1], else [0]
+ */ int txt_parseOut(ArrayList* l,char filename[]);
 #endif // PARSER_H_INCLUDED

@@ -465,6 +465,30 @@ int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order)
 }
 
 
+
+ArrayList* al_filter(ArrayList* listIn, int (*functionFilter)(void*))
+{
+    ArrayList* returnAux=NULL;
+    int i, aux;
+
+    if(listIn!=NULL && functionFilter!=NULL)
+    {
+        returnAux=al_newArrayList();
+        for(i=0; i<listIn->len(listIn); i++)
+        {
+            aux=functionFilter(listIn->get(listIn,i));
+            if(aux)
+            {
+                returnAux->add(returnAux,listIn->get(listIn,i));
+            }
+        }
+    }
+    return returnAux;
+}
+
+
+
+
 /** \brief Increment the number of elements in pList in AL_INCREMENT elements.
  * \param pList ArrayList* Pointer to arrayList
  * \return int Return (-1) if Error [pList is NULL pointer or if can't allocate memory]

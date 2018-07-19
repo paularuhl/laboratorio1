@@ -22,16 +22,13 @@ int main()
             break;
         case 2:
             filtroSinAE = al_filter(database,funcionQueFiltra);
-            parseOut(filtroSinAE,"filtrado.csv");
+            txt_parseOut(filtroSinAE,"filtrado.csv");
             generic_finFuncion();
             break;
         case 3:
             main_mostrarLista(filtroSinAE);
-
-//            main_depurar(destinatarios,listaNegra,depurados);
             break;
         case 4:
-//            dest_mostrarLista(depurados);
             break;
         /*  case 5:
                 generic_finFuncion();

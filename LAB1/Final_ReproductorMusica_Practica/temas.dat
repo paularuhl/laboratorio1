@@ -1,0 +1,401 @@
+id,nombre_tema,artista
+1,Uptown Funk,Bruno Mars
+2,Hello,Adele
+3,7 Years,Lukas Graham
+4,On écrit sur les murs,Kids United
+5,Can't Stop The Feeling,Justin Timberlake
+6,Love Yourself,Justin Bieber
+7,Don't Stop Believing,Journey
+8,All Of Me,John Legend
+9,Tennessee Whiskey,Chris Stapleton
+10,House Of The Rising Sun,Traditional
+11,Thinking Out Loud,Ed Sheeran
+12,Girl Crush,Little Big Town
+13,J'ai cherché,Amir
+14,Sweet Caroline,Neil Diamond
+15,Il est où le bonheur,Christophe Maé
+16,Let It Go,Idina Menzel
+17,Bohemian Rhapsody,Queen
+18,Cheap Thrills,Sia
+19,Happy,Pharrell Williams
+20,Amazing Grace,Traditional
+21,Lost Boy,Ruth B
+22,Cake By The Ocean,DNCE
+23,When We Were Young,Adele
+24,One Call Away,Charlie Puth
+25,Andalouse,Kendji Girac
+26,Ring Of Fire,Johnny Cash
+27,Can't Help Falling In Love,Elvis Presley
+28,Les yeux de la mama,Kendji Girac
+29,Summer Nights,Grease
+30,Send My Love (To Your New Lover),Adele
+31,Stitches,Shawn Mendes
+32,No,Meghan Trainor
+33,"Libérée, délivrée",Frozen
+34,Like I'm Gonna Lose You,Meghan Trainor
+35,Sorry,Justin Bieber
+36,Shut Up And Dance,Walk The Moon
+37,La Bamba,Mexican Traditional
+38,My Church,Maren Morris
+39,Rolling In The Deep,Adele
+40,My Way,Frank Sinatra
+41,Folsom Prison Blues,Johnny Cash
+42,Ex's & Oh's,Elle King
+43,Sweet Home Alabama,Lynyrd Skynyrd
+44,"New York, New York",Frank Sinatra
+45,I Will Always Love You,Whitney Houston
+46,Fly Me To The Moon,Frank Sinatra
+47,My Girl,The Temptations
+48,Friends In Low Places,Garth Brooks
+49,I Will Survive,Gloria Gaynor
+50,Summer Of '69,Bryan Adams
+51,Shake It Off,Taylor Swift
+52,Crazy,Patsy Cline
+53,A Thousand Years,Christina Perri
+54,Someone Like You,Adele
+55,On va s'aimer,Gilbert Montagné
+56,Wagon Wheel,Darius Rucker
+57,Don't Be So Shy,Imany
+58,One Dance,Drake
+59,Make You Feel My Love,Adele
+60,My Heart Will Go On,Céline Dion
+61,Me Too,Meghan Trainor
+62,Sweet Child O'Mine,Guns N' Roses
+63,Wannabe,Spice Girls
+64,Les Champs-Élysées,Joe Dassin
+65,"Huntin', Fishin' and Lovin' Every Day",Luke Bryan
+66,Hallelujah,Alexandra Burke
+67,At Last,Etta James
+68,Imagine,John Lennon
+69,Livin' On A Prayer,Bon Jovi
+70,"Take Me Home, Country Roads",John Denver
+71,What A Wonderful World,Louis Armstrong
+72,Les démons de minuit,Images
+73,Mistral gagnant,Renaud
+74,Fight Song,Rachel Platten
+75,All About That Bass,Meghan Trainor
+76,Before He Cheats,Carrie Underwood
+77,House Of The Rising Sun,The Animals
+78,Jackson,Johnny Cash
+79,Black Velvet,Alannah Myles
+80,Say Something,A Great Big World
+81,Piano Man,Billy Joel
+82,Unchained Melody,The Righteous Brothers
+83,Seite an Seite,Christina Stürmer
+84,H.O.L.Y.,Florida Georgia Line
+85,Humble And Kind,Tim McGraw
+86,Die Immer Lacht,Stereoact
+87,Me And Bobby McGee,Janis Joplin
+88,This Is What You Came For,Calvin Harris
+89,Stressed Out,Twenty One Pilots
+90,Duele el corazón,Enrique Iglesias
+91,Hey Jude,The Beatles
+92,Burning House,Cam
+93,Let It Be,The Beatles
+94,Don't Let Me Down,The Chainsmokers
+95,Billie Jean,Michael Jackson
+96,I'm Yours,Jason Mraz
+97,Bailando,Enrique Iglesias
+98,Stand By Me,Ben E. King
+99,Let It Go,James Bay
+100,Dangerous Woman,Ariana Grande
+101,Vivo per lei,Andrea Bocelli
+102,Ain't No Sunshine,Bill Withers
+103,Sofia,Álvaro Soler
+104,Your Song,Elton John
+105,The Rose,Bette Midler
+106,(Sittin' On) The Dock Of The Bay,Otis Redding
+107,Work,Rihanna
+108,Feeling Good,Michael Bublé
+109,(I've Had) The Time Of My Life,Dirty Dancing
+110,Give Me One Reason,Tracy Chapman
+111,80 Millionen,Max Giesinger
+112,Place des grands hommes,Patrick Bruel
+113,I Love Rock 'N Roll,Joan Jett
+114,Get Lucky,Daft Punk
+115,Barbie Girl,Aqua
+116,Just Like Fire,Pink
+117,Titanium,David Guetta
+118,Angels,Robbie Williams
+119,I Wanna Dance With Somebody,Whitney Houston
+120,Turn The Page,Bob Seger
+121,Photograph,Ed Sheeran
+122,Dear Future Husband,Meghan Trainor
+123,History,One Direction
+124,You're The One That I Want,Grease
+125,Sur ma route,Black M
+126,Hello,Lionel Richie
+127,Chandelier,Sia
+128,Les sardines,Patrick Sébastien
+129,Killing Me Softly,The Fugees
+130,Proud Mary,Tina Turner
+131,Ton visage,Fréro Delavega
+132,Can't Feel My Face,The Weeknd
+133,I Want It That Way,Backstreet Boys
+134,Zombie,The Cranberries
+135,A Whole New World,Aladdin
+136,Skyfall,Adele
+137,Sugar,Maroon 5
+138,Wir sind groß,Mark Forster
+139,You Raise Me Up,Josh Groban
+140,Sous le vent,Garou
+141,No me mirès mas,Kendji Girac
+142,These Boots Are Made For Walkin',Nancy Sinatra
+143,Back To Black,Amy Winehouse
+144,The Star-Spangled Banner,National Anthem
+145,Le chant des sirènes,Fréro Delavega
+146,Cups (You're Gonna Miss Me When I'm Gone),Pitch Perfect
+147,Church Bells,Carrie Underwood
+148,Highway To Hell,AC/DC
+149,Always On My Mind,Willie Nelson
+150,Work From Home,Fifth Harmony
+151,Summertime,Ella Fitzgerald
+152,Girls Just Wanna Have Fun,Cyndi Lauper
+153,Peter Pan,Kelsea Ballerini
+154,Have You Ever Seen The Rain?,Creedence Clearwater Revival
+155,Stay With Me,Sam Smith
+156,Jolene,Dolly Parton
+157,God Bless The U.S.A.,Lee Greenwood
+158,Wonderful Tonight,Eric Clapton
+159,I'm Not The Only One,Sam Smith
+160,Head Over Boots,Jon Pardi
+161,Marvin Gaye,Charlie Puth
+162,September,"Earth, Wind & Fire"
+163,Je te donne,Jean-Jacques Goldman
+164,Yesterday,The Beatles
+165,Baby Got Back,Sir Mix-a-Lot
+166,Ice Ice Baby,Vanilla Ice
+167,I Took A Pill In Ibiza (Seeb Remix),Mike Posner
+168,He Stopped Loving Her Today,George Jones
+169,Auf uns,Andreas Bourani
+170,Atemlos durch die Nacht,Helene Fischer
+171,Can You Feel The Love Tonight,Elton John
+172,Every Breath You Take,The Police
+173,Ride,Twenty One Pilots
+174,Try Everything,Shakira
+175,Mama's Broken Heart,Miranda Lambert
+176,When I Was Your Man,Bruno Mars
+177,Nobody To Blame,Chris Stapleton
+178,All I Ask,Adele
+179,Mustang Sally,The Commitments
+180,Margaritaville,Jimmy Buffett
+181,This Girl,Kungs
+182,Bad Moon Rising,Creedence Clearwater Revival
+183,Man! I Feel Like A Woman!,Shania Twain
+184,Die a Happy Man,Thomas Rhett
+185,Le Jerk,Thierry Hazard
+186,Les sunlights des tropiques,Gilbert Montagné
+187,Love Shack,The B-52's
+188,Diamonds,Rihanna
+189,Johnny B. Goode,Chuck Berry
+190,Y.M.C.A.,Village People
+191,Suspicious Minds,Elvis Presley
+192,Cheerleader (Felix Jaehn Remix),OMI
+193,I Got You Babe,Sonny & Cher
+194,Crazy Little Thing Called Love,Queen
+195,Love Me Tender,Elvis Presley
+196,Alexandrie Alexandra,Claude François
+197,The Best,Tina Turner
+198,Don't Know Why,Norah Jones
+199,Georgia On My Mind,Ray Charles
+200,If I Ain't Got You,Alicia Keys
+201,Total Eclipse Of The Heart,Bonnie Tyler
+202,Superstition,Stevie Wonder
+203,Tears In Heaven,Eric Clapton
+204,California Dreamin',The Mamas And The Papas
+205,Pontoon,Little Big Town
+206,Oh Happy Day,Sister Act
+207,El perdón,Nicky Jam
+208,Si jamais j'oublie,Zaz
+209,Wanted Dead Or Alive,Bon Jovi
+210,J'ai encore rêvé d'elle,Il était une fois
+211,I Am A Man Of Constant Sorrow,Soggy Bottom Boys
+212,Hallelujah,Leonard Cohen
+213,Just Give Me A Reason,Pink
+214,La Marseillaise,National Anthem
+215,Cheap Thrills (feat. Sean Paul),Sia
+216,L-O-V-E,Nat King Cole
+217,Femme libérée,Cookie Dingler
+218,Buy Me A Boat,Chris Janson
+219,Celebration,Kool And The Gang
+220,Under The Boardwalk,The Drifters
+221,Kryptonite,3 Doors Down
+222,Take Me To Church,Hozier
+223,Love Me Like You Do,Ellie Goulding
+224,Hulapalu,Andreas Gabalier
+225,La Bamba,Los Lobos
+226,Manhattan-Kaboul,Renaud
+227,Unlove You,Jennifer Nettles
+228,I Love This Bar,Toby Keith
+229,Strawberry Wine,Deana Carter
+230,Blank Space,Taylor Swift
+231,Happy Birthday,Happy Birthday Songs
+232,Walkin' After Midnight,Patsy Cline
+233,Allumer le feu,Johnny Hallyday
+234,Don't Be Cruel,Elvis Presley
+235,Flashlight,Jessie J
+236,Wrecking Ball,Miley Cyrus
+237,Never Gonna Give You Up,Postmodern Jukebox
+238,L'aventurier,Indochine
+239,Amarillo By Morning,George Strait
+240,Don't Stop Me Now,Queen
+241,Hit The Road Jack,Ray Charles
+242,(Everything I Do) I Do It For You,Bryan Adams
+243,Valerie ('68 version),Amy Winehouse
+244,Neon Moon,Brooks & Dunn
+245,Sex On Fire,Kings of Leon
+246,Maman,Louane
+247,Twist And Shout,The Beatles
+248,L'envie d'aimer,Les Dix Commandements
+249,Eye Of The Tiger,Survivor
+250,Proud Mary,Creedence Clearwater Revival
+251,L'hymne à l'amour,Edith Piaf
+252,Gunpowder & Lead,Miranda Lambert
+253,Hopelessly Devoted To You,Grease
+254,I See Fire,Ed Sheeran
+255,Fever,Peggy Lee
+256,Santeria,Sublime
+257,Rehab,Amy Winehouse
+258,Call Me Maybe,Carly Rae Jepsen
+259,Je veux,Zaz
+260,Under The Bridge,Red Hot Chili Peppers
+261,Bella,Maître Gims
+262,Radioactive,Imagine Dragons
+263,S.O.B.,Nathaniel Rateliff & The Night Sweats
+264,The Gambler,Kenny Rogers
+265,Chasing Cars,Snow Patrol
+266,J't'emmène au vent,Louise Attaque
+267,You Know I'm No Good,Amy Winehouse
+268,Come,Jain
+269,The Dance,Garth Brooks
+270,Faded,Alan Walker
+271,Ca c'est vraiment toi,Téléphone
+272,Part Of Your World,Little Mermaid
+273,Somewhere Over The Rainbow,Judy Garland
+274,Ham kummst,Seiler Und Speer
+275,Simple Man,Lynyrd Skynyrd
+276,Budapest,George Ezra
+277,Space Oddity,David Bowie
+278,Angel,Sarah McLachlan
+279,Halo,Beyoncé
+280,Careless Whisper,George Michael
+281,Geiles Leben,Glasperlenspiel
+282,Somebody To Love,Queen
+283,Strangers In The Night,Frank Sinatra
+284,In Spite of Ourselves,John Prine
+285,Here Comes The Sun,The Beatles
+286,Africa,Toto
+287,"Quando, Quando, Quando",Michael Bublé
+288,Emmenez-moi,Charles Aznavour
+289,Hallelujah,Jeff Buckley
+290,It's My Life,Bon Jovi
+291,I'm Gonna Be (500 Miles),The Proclaimers
+292,Only You (And You Alone),The Platters
+293,The Way You Look Tonight,Frank Sinatra
+294,Watch Me (Whip / Nae Nae),Silentó
+295,Treasure,Bruno Mars
+296,Hold Back The River,James Bay
+297,Faithfully,Journey
+298,Son Of A Preacher Man,Dusty Springfield
+299,Warum hast du nicht nein gesagt,Roland Kaiser
+300,La vie en rose,Edith Piaf
+301,Toujours debout,Renaud
+302,You Never Even Called Me By My Name,David Allan Coe
+303,I Want To Break Free,Queen
+304,Don't Close Your Eyes,Keith Whitley
+305,Jailhouse Rock,Elvis Presley
+306,Whiskey Lullaby,Brad Paisley
+307,Lemon Tree,Fool's Garden
+308,Three Little Birds,Bob Marley
+309,Mon mec à moi,Patricia Kaas
+310,Chicken Fried,Zac Brown Band
+311,That's Amore,Dean Martin
+312,Sandcastles,Beyoncé
+313,Blue Suede Shoes,Elvis Presley
+314,It's Not Unusual,Tom Jones
+315,Hit Me With Your Best Shot,Pat Benatar
+316,Need You Now,Lady Antebellum
+317,Quand la musique est bonne,Jean-Jacques Goldman
+318,Play That Funky Music,Wild Cherry
+319,Respect,Aretha Franklin
+320,Let Her Go,Passenger
+321,Footloose,Kenny Loggins
+322,Jolene,Miley Cyrus
+323,The Wonder Of You,Elvis Presley
+324,Come Together,The Beatles
+325,Nuit de folie,Début de soirée
+326,Color Gitano,Kendji Girac
+327,Twinkle Twinkle Little Star,Nursery Rhyme
+328,Don't Go Breaking My Heart,Elton John
+329,Marry You,Bruno Mars
+330,It's Now Or Never,Elvis Presley
+331,That's Life,Frank Sinatra
+332,We Will Rock You,Queen
+333,La bohème,Charles Aznavour
+334,Black Horse And The Cherry Tree,KT Tunstall
+335,What Do You Mean?,Justin Bieber
+336,I Don't Want To Miss A Thing,Aerosmith
+337,Achy Breaky Heart,Billy Ray Cyrus
+338,You Are So Beautiful,Joe Cocker
+339,Jar Of Hearts,Christina Perri
+340,Counting Stars,OneRepublic
+341,"Oh, Pretty Woman",Roy Orbison
+342,99 Luftballons,Nena
+343,I Have Nothing,Whitney Houston
+344,Titanium (Acoustic),David Guetta
+345,Just The Way You Are,Billy Joel
+346,Cendrillon,Téléphone
+347,Endless Love,Diana Ross
+348,Ain't Your Mama,Jennifer Lopez
+349,All Night Long,Lionel Richie
+350,Over The Rainbow / What A Wonderful World,Israel Kamakawiwo'ole
+351,C'est la vie,Collectif Métissé
+352,Sway,Michael Bublé
+353,One And Only,Adele
+354,Ain't No Mountain High Enough,Marvin Gaye
+355,Parler à mon père,Céline Dion
+356,Et si tu n'existais pas,Joe Dassin
+357,King Of The Road,Roger Miller
+358,Pillowtalk,Zayn
+359,Family Tradition,"Hank Williams, Jr."
+360,In The Ghetto,Elvis Presley
+361,Let's Stay Together,Al Green
+362,With Arms Wide Open,Creed
+363,Locked Out Of Heaven,Bruno Mars
+364,Couleur café,Chico & The Gypsies
+365,See You Again,Wiz Khalifa
+366,Your Man,Josh Turner
+367,Dream A Little Dream Of Me,The Mamas And The Papas
+368,Unchain My Heart,Joe Cocker
+369,Redneck Woman,Gretchen Wilson
+370,"No Woman, No Cry",Bob Marley
+371,Cette année-là,Claude François
+372,The Show Must Go On,Queen
+373,Shoop,Salt' N' Pepa
+374,Boot Scootin' Boogie,Brooks & Dunn
+375,Old Time Rock & Roll,Bob Seger
+376,Le chanteur,Daniel Balavoine
+377,"Non, je ne regrette rien",Edith Piaf
+378,Wake Me Up!,Avicii
+379,Mack The Knife,Bobby Darin
+380,Hallelujah,Rufus Wainwright
+381,Green Green Grass Of Home,Tom Jones
+382,You've Lost That Loving Feeling,The Righteous Brothers
+383,Killing Me Softly With His Song,Roberta Flack
+384,Mercy,Duffy
+385,We Are The Champions,Queen
+386,I'm A Believer,The Monkees
+387,I Gotta Feeling,Black Eyed Peas
+388,Un autre monde,Téléphone
+389,I Took A Pill In Ibiza,Mike Posner
+390,Ce rêve bleu,Aladdin
+391,We Are The World,USA For Africa
+392,Can't Take My Eyes Off Of You,Frankie Valli
+393,Royals,Lorde
+394,Grandpa (Tell Me 'Bout The Good Old Days),The Judds
+395,American Pie,Don McLean
+396,9 To 5,Dolly Parton
+397,...Baby One More Time,Britney Spears
+398,Think Of You,Chris Young
+399,I Won't Give Up,Jason Mraz
+400,Love on the Brain,Rihanna

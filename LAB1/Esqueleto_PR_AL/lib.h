@@ -69,6 +69,7 @@ typedef struct{
  */ int validarDatoMaxMin(int dato, char mensaje[], int min, int max);
 
 int string_validaRango(char str[], int min, int max);
+int string_validateLength(char* str, int len);
 
  ///get strings
 /**

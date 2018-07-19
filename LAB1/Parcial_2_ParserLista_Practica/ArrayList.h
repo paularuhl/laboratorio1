@@ -44,6 +44,13 @@ struct ArrayList{
 }typedef ArrayList;
 #endif
 
+/** \brief filtra una lista en base a X criterio
+ *
+ * \param ArrayList* a filtrar, *functionFilter funcion que filtra
+ * \return ArrayList* nueva arrayList con el filtro aplicado
+ *
+ */
+ArrayList* al_filter(ArrayList* this, int (*functionFilter)(void*));
 
 /** \brief Allocate a new arrayList with AL_INITIAL_VALUE elements.
  * \param void

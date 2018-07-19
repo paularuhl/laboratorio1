@@ -65,6 +65,22 @@ int generic_confirmar(void)
 
 ///validar strings
 
+int string_validateLength(char* str, int len)
+{
+    int i, r=1;
+    if(str != NULL)
+    {
+    for(i=0;*(str+i)!='\0';i++)
+    {
+        if(i>len)
+        {
+            r=0;
+            break;
+        }
+    }
+    }
+    return r;
+}
 
 int string_isNull (char value)
 {

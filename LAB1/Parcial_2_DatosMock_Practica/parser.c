@@ -7,24 +7,24 @@
 #include "ArrayList.h"
 #include "parser.h"
 
-
-int parseIn(ArrayList* l,char filename[],int* id)
+int txt_parseIn(ArrayList* l,char filename[])
 {
     FILE* fp;
     soc* s;
     char name[40];
     char lastname[40];
     char mail[50];
+    char socid[5];
     int aux;
     fp = fopen(filename,"r");
     if(fp!=NULL&&l!=NULL)
     {
         do
         {
-            (*id)++;
             s=soc_newStruct();
-            fscanf(fp,"%d,%[^,],%[^,],%[^\n]\n",&aux,name,lastname,mail);
-            s->idSocio = *id;
+            fscanf(fp,"%[^,],%[^,],%[^,],%[^\n]\n",socid,name,lastname,mail);
+            aux = atoi(socid);
+            soc_setId(s,&aux);
             soc_setName(s,name);
             soc_setLastname(s,lastname);
             soc_setMail(s,mail);
@@ -33,17 +33,16 @@ int parseIn(ArrayList* l,char filename[],int* id)
         }
         while(!feof(fp));
         fclose(fp);
+        return aux;
     }
     else
     {
-        *id=-1;
+        return -1;
     }
-    fclose(fp);
 
-    return *id;
 }
 
-int parseOut(ArrayList* lista,char filename[])
+int txt_parseOut(ArrayList* lista,char filename[])
 {
     soc* s;
     FILE* fp;
@@ -57,6 +56,48 @@ int parseOut(ArrayList* lista,char filename[])
             {
                 s=(soc*) lista->get(lista,i);
                 fprintf(fp,"%d,%d,%s,%s,%s\n",soc_getId(s),soc_getState(s),soc_getName(s),soc_getLastname(s),soc_getMail(s));
+            }
+        }
+        fclose(fp);
+        r=0;
+    }
+    return r;
+}
+
+
+void bin_parseIn(ArrayList* lista,int* id)
+{
+    soc* s;
+    FILE* binFile;
+    binFile=fopen("socios.bin","rb");
+    if(binFile!=NULL)
+    {
+        while(!feof(binFile))
+        {
+            s=soc_newStruct();
+            fread((s),sizeof(soc),1,binFile);
+            lista->add(lista,s);
+            *id=s->idSocio;
+        }
+        fclose(binFile);
+        printf("Existe una base de datos para este programa.\n");
+    }
+}
+
+int bin_parseOut(ArrayList* lista,char filename[])
+{
+    soc* s;
+    FILE* fp;
+    int i, r=-1;
+    if(lista!=NULL)
+    {
+        fp=fopen(filename,"wb");
+        if(fp!=NULL)
+        {
+            for(i=0; i<lista->len(lista); i++)
+            {
+                s=(soc*)lista->get(lista,i);
+                fwrite(s,sizeof(soc),1,fp);
             }
         }
         fclose(fp);

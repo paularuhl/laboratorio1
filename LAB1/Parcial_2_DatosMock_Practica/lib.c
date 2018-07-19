@@ -9,12 +9,12 @@
 
 void main_parseIn(int* id,ArrayList* database)
 {
-    if((*id=parseIn(database,"datos1.csv",id)!=-1)&&(*id=parseIn(database,"datos2.csv",id)!=-1))
+    if((*id=txt_parseIn(database,"datos1.csv",id)!=-1)&&(*id=txt_parseIn(database,"datos2.csv",id)!=-1))
     {
         printf("\nDatos cargados satisfactoriamente. Exportar lista nueva? s/n: ");
         if(generic_confirmar())
         {
-            if(-1!=parseOut(database,"database.csv"))
+            if(-1!=txt_parseOut(database,"database.csv"))
             {
                 printf("\nLista exportada correctamente!\n");
             }
@@ -231,7 +231,7 @@ void generic_alta(ArrayList* lista, int* id)
     if(generic_confirmar())
     {
         lista->add(lista,s);
-        parseOut(lista,"socios.csv");
+        txt_parseOut(lista,"socios.csv");
     }
     generic_finFuncion();
 }

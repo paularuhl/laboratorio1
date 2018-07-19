@@ -205,12 +205,11 @@ int generic_confirmar(void)
 
 void generic_alta(ArrayList* lista, int* id)
 {
-    eEmp* s;
+    eEmp* s=emp_newStruct();
     int sal;
     system("cls");
 
     printf("\n**ALTA EMPLEADO**");
-    s=emp_newStruct();
     emp_newName(s);
     emp_newEdad(s);
     sal=emp_newProfesion(s);

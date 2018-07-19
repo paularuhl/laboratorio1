@@ -73,7 +73,7 @@
 
 1530221686 c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\arraylist.h
 
-1530490701 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\main.c
+1531323096 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib.h"
@@ -83,6 +83,26 @@
 1531273862 c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\lib.h
 	"ArrayList.h"
 
-1530478921 c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\parser.h
+1531323011 c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\parser.h
 	"ArrayList.h"
+
+1531323077 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"parser.h"
+
+1531323070 source:c:\users\palu\desktop\utnstuff\lab1\parcial_2_datosmock_practica\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"parser.h"
 

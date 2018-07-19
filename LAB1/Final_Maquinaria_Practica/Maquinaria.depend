@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1531613543 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+
+1531621529 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\lib.h
+	"ArrayList.h"
+
+1530221686 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\arraylist.h
+
+1530221621 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1531668356 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+
+1531930672 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	<time.h>
+	"lib.h"
+	"alquileres.h"
+	"clientes.h"
+	"vista.h"
+
+1531930521 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.h
+	"clientes.h"
+
+1531931242 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayList.h"
+	"lib.h"
+	"clientes.h"
+	"alquileres.h"
+	"vista.h"
+
+1531931272 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.h
+	"ArrayList.h"
+
+1531931277 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"control.h"
+	"clientes.h"
+	"alquileres.h"
+	"ArrayList.h"
+	"vista.h"
+	"lib.h"
+
+1531617350 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.h
+
+1531931194 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.h
+	"alquileres.h"
+
+1531931253 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"vista.h"
+	"alquileres.h"
+
+1531670720 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\ctes.h
+
+1531670608 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\ctes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayList.h"
+	"lib.h"
+	"ctes.h"
+	"vista.h"
+
