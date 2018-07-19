@@ -18,6 +18,7 @@ void vista_menuPrincipal()
     printf("4. Nuevo Alquiler\n");
     printf("5. Fin Alquiler\n");
     printf("6. Informes\n");
+    printf("7. Exportar datos actuales\n");
 
     printf("\n0. Salir\n");
 }
@@ -112,20 +113,12 @@ void vista_noData()
 
 void vista_encabezadoClientes()
 {
-    printf("\nID\t| DNI\t| Nombre\t| Apellido");
+    printf("\nID\t| DNI\t| Nombre y Apellido");
 }
 
 void vista_mostrarUnCte(client* c)
 {
-    int len;
-    len=strlen(clientes_getName(c));
-
-    printf("\n%d\t| %s\t| %s\t",clientes_getId(c),clientes_getDni(c),clientes_getName(c));
-    if(len<6)
-    {
-        printf("\t");
-    }
-    printf("| %s",clientes_getLastname(c));
+    printf("\n%d\t| %s\t| %s %s",clientes_getId(c),clientes_getDni(c),clientes_getName(c),clientes_getLastname(c));
 }
 
 void vista_encabezadoAlq()
@@ -138,7 +131,7 @@ void vista_mostrarUnAlq(rent* a, ArrayList* ctes)
     alq_printEquipo(a);
     printf("\t| ");
     alq_printOp(a);
-    printf("\t| ");
+    printf("\t\t| ");
     alq_printCte(a,ctes);
 }
 void vista_mostrarFinAlq(rent* a, ArrayList* ctes)
@@ -153,7 +146,7 @@ void vista_mostrarFinAlq(rent* a, ArrayList* ctes)
 
 void vista_encabezadoFinAlq()
 {
-    printf("\nID\t| T.Est\t| T.Real\t| Equipo\t| Operador\t| Cliente");
+    printf("\nID\t| Alq Est. | Alq Real | Equipo\t| Operador\t| Cliente");
 }
 void vista_mostrarAlqBajaCte(client* c, ArrayList* ctes, ArrayList* alq)
 {

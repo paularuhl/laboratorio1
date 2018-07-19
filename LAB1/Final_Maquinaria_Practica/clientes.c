@@ -23,7 +23,11 @@ void clientes_alta(ArrayList* clientes,int* id)
 
         clientes_setName(c,clientes_askName(name));
         clientes_setLastname(c,clientes_askLastname(lastname));
-        clientes_setDni(c,clientes_askDni(dni));
+        do{
+
+            clientes_setDni(c,clientes_askDni(dni));
+        }while(clientes_dniRepetido(clientes,dni));
+
         clientes_setState(c,HABILITADO);
 
         clientes_mostrarSimple(c);
@@ -37,7 +41,26 @@ void clientes_alta(ArrayList* clientes,int* id)
         vista_clean();
     }
 }
+int clientes_dniRepetido(ArrayList* l,char* dni)
+{
+    int i,r=0;
+    int doc=atoi(dni), aux;
+    client* c=NULL;
 
+    for(i=0; i<al_len(l); i++)
+    {
+        c=al_get(l,i);
+        aux=atoi(clientes_getDni(c));
+
+        if(aux==doc)
+        {
+            r=1;
+            printf("Error, ya existe un cliente con ese dni");
+            break;
+        }
+    }
+    return r;
+}
 void clientes_modificar(ArrayList* clientes)
 {
     client* c;
@@ -88,7 +111,9 @@ void clientes_modificar(ArrayList* clientes)
 
 void clientes_baja(ArrayList* clientes,ArrayList* alq)
 {
-    client* c;
+    client* c=NULL;
+    rent* a=NULL;
+    int i;
     if(clientes!=NULL)
     {
         clientes_mostrarLista(clientes);
@@ -97,9 +122,17 @@ void clientes_baja(ArrayList* clientes,ArrayList* alq)
         clientes_mostrarUno(c);
         vista_encabezadoFinAlq();
         vista_mostrarAlqBajaCte(c,clientes,alq);
-        if(vista_confirmar("\nDar de baja cliente?"))
+        if(vista_confirmar("\nDar de baja cliente y finalizar alquileres?"))
         {
             c->state=INHABILITADO;
+            for(i=0; i<al_len(alq); i++)
+            {
+                a=al_get(alq,i);
+                if(alq_getCte(a)==clientes_getId(c)&&alq_getState(a)==1)
+                {
+                    alq_setState(a,0);
+                }
+            }
         }
         vista_clean();
     }

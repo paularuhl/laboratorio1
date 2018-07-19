@@ -23,7 +23,7 @@
 	<conio.h>
 	"lib.h"
 
-1531930672 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.c
+1531971029 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -35,10 +35,10 @@
 	"clientes.h"
 	"vista.h"
 
-1531930521 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.h
+1531968269 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.h
 	"clientes.h"
 
-1531931242 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.c
+1531970470 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -50,10 +50,10 @@
 	"alquileres.h"
 	"vista.h"
 
-1531931272 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.h
+1531970485 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.h
 	"ArrayList.h"
 
-1531931277 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.c
+1531970711 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -65,13 +65,14 @@
 	"ArrayList.h"
 	"vista.h"
 	"lib.h"
+	"dataManager.h"
 
 1531617350 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.h
 
 1531931194 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.h
 	"alquileres.h"
 
-1531931253 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.c
+1531971029 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -92,4 +93,18 @@
 	"lib.h"
 	"ctes.h"
 	"vista.h"
+
+1531969647 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\datamanager.h
+
+1531969598 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\datamanager.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"dataManager.h"
+	"clientes.h"
+	"alquileres.h"
 

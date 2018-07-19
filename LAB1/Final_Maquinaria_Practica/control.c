@@ -10,6 +10,7 @@
 #include "ArrayList.h"
 #include "vista.h"
 #include "lib.h"
+#include "dataManager.h"
 
 void control_init()
 {
@@ -17,7 +18,8 @@ void control_init()
     ArrayList* alquileres=al_newArrayList();
 
     int opcion, salir=0;
-    int idCte=0, idAlq=0;
+    int idCte=ctes_parseIn(clientes,"clientes.csv");
+    int idAlq=alq_parseIn(alquileres,"alq.csv");
 
     do
     {
@@ -42,8 +44,18 @@ void control_init()
             alq_baja(alquileres,clientes);
             break;
         case 6:
+            alq_clienteConMasAlquileres(clientes,alquileres);
+            alq_equipoMax(alquileres);
+            tiempoPromedioReal(alquileres);
+            break;
+        case 7:
+            ctes_parseOut(clientes,"clientes.csv");
+            alq_parseOut(alquileres,"alq.csv");
+            printf("Archivos generados succesfully ahre\n");
             break;
         case 0:
+            ctes_parseOut(clientes,"clientes.csv");
+            alq_parseOut(alquileres,"alq.csv");
             printf("Adios!\n");
             system("pause");
             salir = 1;

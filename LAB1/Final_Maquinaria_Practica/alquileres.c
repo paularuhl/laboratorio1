@@ -49,11 +49,13 @@ void alq_baja(ArrayList* rentals, ArrayList* ctes)
     alq_mostrarLista(rentals,ctes);
     a=alq_buscarId(rentals);
     alq_setRealTime(a,alq_askRealTime());
+    vista_encabezadoFinAlq();
     vista_mostrarFinAlq(a,ctes);
     if(vista_confirmar("Confirmar fin de alquiler?"))
     {
-        a->state=FINALIZADO;
+        alq_setState(a,FINALIZADO);
     }
+    vista_clean();
 
 }
 
@@ -307,18 +309,18 @@ rent* alq_buscarId(ArrayList* alq)
     int id, i;
     if(alq!=NULL)
     {
-    id=entero_get("id de alquiler");
+        id=entero_get("id de alquiler");
 
-    for(i=0; i<al_len(alq); i++)
-    {
-
-        a=al_get(alq,i);
-        if(id==a->idAlq)
+        for(i=0; i<al_len(alq); i++)
         {
-            aux=a;
-            break;
+
+            a=al_get(alq,i);
+            if(id==a->idAlq)
+            {
+                aux=a;
+                break;
+            }
         }
-    }
     }
     return aux;
 }
@@ -356,5 +358,132 @@ void alq_printCte (rent* a, ArrayList* ctes)
     client* c;
     int aux = a->idCte;
     c=clientes_forPrint(ctes,&aux);
-    printf("- %s %s\t",clientes_getName(c),clientes_getLastname(c));
+    printf("%s %s\t",clientes_getName(c),clientes_getLastname(c));
+}
+
+
+void alq_clienteConMasAlquileres(ArrayList* ctes, ArrayList* alq)
+{
+    client* c=NULL;
+    client* b=NULL;
+
+    rent* a=NULL;
+    int i,j;
+    int max=0;
+    int cteUno;
+    int cteDos;
+    int contadorAlq;
+    for(i=0; i<al_len(ctes); i++)
+    {
+        c=al_get(ctes,i);
+        contadorAlq=0;
+        for(j=0; j<al_len(alq); j++)
+        {
+            a=al_get(alq,j);
+            if(alq_getCte(a)==clientes_getId(c))
+            {
+                contadorAlq++;
+            }
+
+        }
+        if(contadorAlq<max)
+        {
+            max=contadorAlq;
+            cteUno=i;
+            cteDos=i;
+
+        }
+        else if(contadorAlq==max)
+        {
+            cteDos=i;
+        }
+    }
+
+    c=al_get(ctes,cteUno);
+    printf("\nEl cliente con mas alquileres es: ");
+    vista_mostrarUnCte(c);
+    if(cteUno!=cteDos)
+    {
+        printf("\nY el siguiente cliente tiene la misma cantidad: ");
+        b=al_get(ctes,cteDos);
+        vista_mostrarUnCte(b);
+    }
+}
+
+
+void alq_equipoMax(ArrayList* alq)
+{
+    rent* a=NULL;
+    int i;
+    int amo=0;
+    int mezc=0;
+    int tal=0;
+    for(i=0; i<al_len(alq); i++)
+    {
+        a=al_get(alq,i);
+        switch(alq_getEquipo(a))
+        {
+        case AMOLADORA:
+            amo++;
+            break;
+        case MEZCLADORA:
+            mezc++;
+            break;
+        case TALADRO:
+            tal++;
+            break;
+        }
+    }
+    if(amo>mezc&&amo>tal)
+    {
+        printf("El equipo mas alquilado es la amoladora, y se alquilaron %d en total",amo);
+
+    }
+    if(mezc>amo||tal>amo)
+    {
+        if(mezc>tal)
+        {
+            printf("El equipo mas alquilado es la mezcladora, y se alquilaron %d en total",mezc);
+        }
+        else
+        {
+            printf("El equipo mas alquilado es el taladro, y se alquilaron %d en total",tal);
+        }
+    }
+    else if(mezc==amo||tal==amo)
+    {
+        if(mezc==tal)
+        {
+            printf("Los tres equipos se alquilaron por igual, %d de cada uno",amo);
+        }
+        else if(mezc==amo)
+        {
+            printf("La mezcladora y la amoladora se alquilaron por igual, %d de cada una",amo);
+        }
+        else
+        {
+            printf("La amoladora y el taladro se alquilaron por igual, %d de cada uno",amo);
+        }
+    }
+
+
+}
+
+
+void tiempoPromedioReal(ArrayList* alq)
+{
+    rent* a=NULL;
+    int contador=0, acumulador=0;
+    int i,promedio;
+    for(i=0;i<al_len(alq);i++)
+    {
+        a=al_get(alq,i);
+        if(alq_getState(a)==FINALIZADO)
+        {
+            contador++;
+            acumulador+=alq_getRealTime(a);
+        }
+    }
+    promedio=acumulador/contador;
+    printf("\nEl tiempo promedio real de alquiler de los equipos es de %dhs",promedio);
 }

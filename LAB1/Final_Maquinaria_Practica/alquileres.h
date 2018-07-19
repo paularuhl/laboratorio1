@@ -14,6 +14,11 @@ typedef struct {
 
 } rent;
 
+void alq_equipoMax(ArrayList* alq);
+
+void alq_clienteConMasAlquileres(ArrayList* ctes, ArrayList* alq);
+void tiempoPromedioReal(ArrayList* alq);
+
 int alq_tiempo();
 
 void alq_alta(ArrayList* alq, ArrayList* ctes,int* id);
