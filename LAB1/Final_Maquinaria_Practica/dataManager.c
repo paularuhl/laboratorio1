@@ -9,7 +9,11 @@
 #include "clientes.h"
 #include "alquileres.h"
 
-
+void parseOut(ArrayList* clientes,ArrayList* alquileres)
+{
+    ctes_parseOut(clientes,"clientes.csv");
+    alq_parseOut(alquileres,"alq.csv");
+}
 int ctes_parseIn(ArrayList* l,char filename[])
 {
     FILE* fp;

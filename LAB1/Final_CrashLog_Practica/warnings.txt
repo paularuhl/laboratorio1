@@ -1,0 +1,10 @@
+09/07/2017;09:39;Servcio7.exe;Error4;hugo@soporte.com.ar
+09/07/2017;09:52;Servcio2.exe;Error17;maria@soporte.com.ar
+09/07/2017;10:01;Servcio11.exe;Error26;marcos@soporte.com.ar
+09/07/2017;10:06;Servcio16.exe;Error31;nestor@soporte.com.ar
+09/07/2017;10:21;Servcio13.exe;Error46;zoe@soporte.com.ar
+09/07/2017;10:30;Servcio4.exe;Error55;pedro@soporte.com.ar
+09/07/2017;10:43;Servcio17.exe;Error68;diego@soporte.com.ar
+09/07/2017;10:44;Servcio18.exe;Error69;omar@soporte.com.ar
+09/07/2017;10:57;Servcio13.exe;Error82;zoe@soporte.com.ar
+09/07/2017;11:08;Servcio15.exe;Error93;danilo@soporte.com.ar

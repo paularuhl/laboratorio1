@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1532217994 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lib.h"
+	"parser.h"
+	"user.h"
+	"post.h"
+
+1532216826 c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\lib.h
+	"ArrayList.h"
+
+1530221686 c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\arraylist.h
+
+1530221621 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1532216813 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\lib.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"post.h"
+	"user.h"
+
+1532217540 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\post.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"post.h"
+
+1532216434 c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\post.h
+	"ArrayList.h"
+
+1532102784 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\user.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"user.h"
+
+1532218275 c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\user.h
+	"ArrayList.h"
+
+1532217960 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"lib.h"
+	"ArrayList.h"
+	"user.h"
+	"post.h"
+
+1532218010 c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\parser.h
+	"ArrayList.h"
+

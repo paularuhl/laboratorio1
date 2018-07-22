@@ -79,9 +79,9 @@ int string_validaRango(char str[], int min, int max)
 {
     int aux,r=1;
     aux = atoi(str);
-    if(aux<min&&aux>max)
+    if(aux<min || aux>max)
     {
-        printf("Error, el numero ingresado esta fuera de rango. MIN: %d MAX: %d",min,max);
+        printf("Error, el numero ingresado esta fuera de rango. MIN: %d MAX: %d\n",min,max);
         r=0;
     }
     else

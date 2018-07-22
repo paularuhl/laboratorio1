@@ -8,6 +8,7 @@
 #include "clientes.h"
 #include "alquileres.h"
 #include "vista.h"
+#include "dataManager.h"
 
 #define INHABILITADO 0
 #define HABILITADO 1
@@ -23,10 +24,12 @@ void clientes_alta(ArrayList* clientes,int* id)
 
         clientes_setName(c,clientes_askName(name));
         clientes_setLastname(c,clientes_askLastname(lastname));
-        do{
+        do
+        {
 
             clientes_setDni(c,clientes_askDni(dni));
-        }while(clientes_dniRepetido(clientes,dni));
+        }
+        while(clientes_dniRepetido(clientes,dni));
 
         clientes_setState(c,HABILITADO);
 
@@ -68,74 +71,107 @@ void clientes_modificar(ArrayList* clientes)
     char name[40], lastname[40];
     if(clientes!=NULL)
     {
-        clientes_mostrarLista(clientes);
-        c=clientes_buscarId(clientes);
-
-        do
+        if(al_len(clientes)!=0)
         {
-            clientes_mostrarSimple(c);
-            vista_menuModificar();
-            opcion=entero_get("opcion");
-            switch(opcion)
+            clientes_mostrarLista(clientes);
+            c=clientes_buscarId(clientes);
+
+            do
             {
-            case 1:
-                clientes_askName(name);
-                if(vista_confirmar("Confirmar cambios?"))
+                clientes_mostrarSimple(c);
+                vista_menuModificar();
+                opcion=entero_get("opcion");
+                switch(opcion)
                 {
-                    clientes_setName(c,name);
+                case 1:
+                    clientes_askName(name);
+                    if(vista_confirmar("Confirmar cambios?"))
+                    {
+                        clientes_setName(c,name);
+                    }
+                    break;
+                case 2:
+                    clientes_askLastname(lastname);
+                    if(vista_confirmar("Confirmar cambios?"))
+                    {
+                        clientes_setLastname(c,lastname);
+                    }
+                    break;
+                case 0:
+                    volver = 1;
+                    break;
+                default:
+                    vista_opcionInvalida();
+                    break;
                 }
-                break;
-            case 2:
-                clientes_askLastname(lastname);
-                if(vista_confirmar("Confirmar cambios?"))
-                {
-                    clientes_setLastname(c,lastname);
-                }
-                break;
-            case 0:
-                volver = 1;
-                break;
-            default:
-                vista_opcionInvalida();
-                break;
             }
+            while(!volver);
         }
-        while(!volver);
+        else
+        {
+            vista_noData();
+        }
     }
     else
     {
         vista_errorNotFound();
     }
-    vista_clean();
+    vista_finFuncion();
 }
 
 void clientes_baja(ArrayList* clientes,ArrayList* alq)
 {
     client* c=NULL;
     rent* a=NULL;
-    int i;
+    int i,flag=0;
     if(clientes!=NULL)
     {
-        clientes_mostrarLista(clientes);
-        c=clientes_buscarId(clientes);
-        vista_clean();
-        clientes_mostrarUno(c);
-        vista_encabezadoFinAlq();
-        vista_mostrarAlqBajaCte(c,clientes,alq);
-        if(vista_confirmar("\nDar de baja cliente y finalizar alquileres?"))
+        if(al_len(clientes)!=0)
         {
-            c->state=INHABILITADO;
+            clientes_mostrarLista(clientes);
+            c=clientes_buscarId(clientes);
+            vista_clean();
+            clientes_mostrarUno(c);
             for(i=0; i<al_len(alq); i++)
             {
                 a=al_get(alq,i);
                 if(alq_getCte(a)==clientes_getId(c)&&alq_getState(a)==1)
                 {
-                    alq_setState(a,0);
+                    flag=1;
+                    break;
                 }
             }
+            if(flag)
+            {
+                vista_mostrarAlqBajaCte(c,clientes,alq);
+                if(vista_confirmar("\nDar de baja cliente y finalizar alquileres?"))
+                {
+                    clientes_setState(c,INHABILITADO);
+                    for(i=0; i<al_len(alq); i++)
+                    {
+                        a=al_get(alq,i);
+                        if(alq_getCte(a)==clientes_getId(c)&&alq_getState(a)==1)
+                        {
+                            alq_setState(a,INHABILITADO);
+                        }
+                    }
+                }
+                vista_clean();
+            }
+            else if(vista_confirmar("\nDar de baja cliente? (s/n): "))
+            {
+                clientes_setState(c,INHABILITADO);
+            }
+            parseOut(clientes,alq);
         }
-        vista_clean();
+        else
+        {
+            vista_noData();
+        }
+
     }
+    vista_finFuncion();
+
 }
 
 
@@ -172,7 +208,7 @@ char* clientes_askDni(char* aux)
             vista_errorItem("el dni","numeros");
         }
     }
-    while(!string_validaRango(aux,1000,9999));
+    while(!string_validaRango(aux,7000000,99999999));
     return aux;
 }
 
@@ -277,18 +313,17 @@ void clientes_mostrarSimple (client* c)
 }
 void clientes_mostrarLista(ArrayList* lista)
 {
-    int i, len;
+    int i;
     client* c;
     if(lista!=NULL)
     {
-        len=al_len(lista);
-        if(len!=0)
+        if(al_len(lista)!=0)
         {
             vista_encabezadoClientes();
-            for(i=0; i<len; i++)
+            for(i=0; i<al_len(lista); i++)
             {
                 c=al_get(lista,i);
-                if(c->state==HABILITADO)
+                if(clientes_getState(c)==HABILITADO)
                 {
                     vista_mostrarUnCte(c);
                 }
@@ -318,7 +353,7 @@ client* clientes_buscarId(ArrayList* clientes)
     {
 
         c=al_get(clientes,i);
-        if(id==c->idCte)
+        if(id==clientes_getId(c))
         {
             aux=c;
             break;

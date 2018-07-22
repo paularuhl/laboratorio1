@@ -1,48 +1,40 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lib.h"
+#include "parser.h"
+#include "user.h"
+#include "post.h"
 
 int main()
 {
-    ArrayList* destinatarios=al_newArrayList();
-    ArrayList* listaNegra=al_newArrayList();
-    ArrayList* depurados=al_newArrayList();
+    ArrayList* mensajes=al_newArrayList();
+    ArrayList* usuarios=al_newArrayList();
 
     int opcion, salir=0;
 
     do
     {
-        opcion = generic_menu();
+        printf("\nMENU:\n1. Cargar mensajes y usuarios.\n2. Procesar y ordenar.\n3. Exportar feed.\n\n Ingrese opcion: ");
+        scanf("%d",&opcion);
         switch(opcion)
         {
         case 1:
-            main_cargarLista("de destinatarios","destinatarios.csv",destinatarios);
+            user_parseIn(usuarios,"usuarios.csv");
+            post_parseIn(mensajes,"mensajes.csv");
+            printf("\n");
+            system("pause");
+            system("cls");
             break;
         case 2:
-            main_cargarLista("negra","black_list.csv",listaNegra);
+            al_sort(usuarios,user_compararNick,1);
+            user_parseOut(usuarios,"test.csv");
+            system("pause");
+            system("cls");
             break;
         case 3:
-            main_depurar(destinatarios,listaNegra,depurados);
+            //mostrarUnUser(usuarios);
+            feed_parseOut(usuarios,mensajes);
             break;
-        case 4:
-            dest_mostrarLista(depurados);
-            break;
-    /*  case 5:
-            generic_finFuncion();
-            break;
-        case 6:
-            generic_finFuncion();
-            break;
-        case 7:
-            generic_finFuncion();
-            break;
-        case 8:
-            generic_finFuncion();
-            break;
-        case 9:
-            generic_finFuncion();
-            break;
-            */
         case 0:
             printf("Adios!\n");
             system("pause");

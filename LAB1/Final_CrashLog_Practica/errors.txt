@@ -1,0 +1,22 @@
+09/07/2017;09:34;Servcio2.exe;Out of memory;maria@soporte.com.ar
+09/07/2017;09:35;Servcio3.exe;Error0;jose@soporte.com.ar
+09/07/2017;09:44;Servcio12.exe;Error9;mateo@soporte.com.ar
+09/07/2017;09:45;Servcio13.exe;Error10;zoe@soporte.com.ar
+09/07/2017;09:50;Servcio18.exe;Error15;omar@soporte.com.ar
+09/07/2017;09:55;Servcio5.exe;Error20;ana@soporte.com.ar
+09/07/2017;09:56;Servcio6.exe;Error21;daniel@soporte.com.ar
+09/07/2017;10:09;Servcio1.exe;Error34;juan@soporte.com.ar
+09/07/2017;10:14;Servcio6.exe;Error39;daniel@soporte.com.ar
+09/07/2017;10:16;Servcio8.exe;Error41;lea@soporte.com.ar
+09/07/2017;10:18;Servcio10.exe;Error43;carlos@soporte.com.ar
+09/07/2017;10:25;Servcio17.exe;Error50;diego@soporte.com.ar
+09/07/2017;10:27;Servcio1.exe;Error52;juan@soporte.com.ar
+09/07/2017;10:37;Servcio11.exe;Error62;marcos@soporte.com.ar
+09/07/2017;10:38;Servcio12.exe;Error63;mateo@soporte.com.ar
+09/07/2017;10:39;Servcio13.exe;Error64;zoe@soporte.com.ar
+09/07/2017;10:40;Servcio14.exe;Error65;sandro@soporte.com.ar
+09/07/2017;10:59;Servcio15.exe;Error84;danilo@soporte.com.ar
+09/07/2017;11:00;Servcio16.exe;Error85;nestor@soporte.com.ar
+09/07/2017;11:04;Servcio2.exe;Error89;maria@soporte.com.ar
+09/07/2017;11:07;Servcio14.exe;Error92;sandro@soporte.com.ar
+09/07/2017;11:10;Servcio17.exe;Error95;diego@soporte.com.ar

@@ -49,6 +49,5 @@ client* clientes_buscarId(ArrayList* clientes);
 int clientes_dniRepetido(ArrayList* l,char* dni);
 
 
-
 #endif // CLIENTES_H_INCLUDED
 

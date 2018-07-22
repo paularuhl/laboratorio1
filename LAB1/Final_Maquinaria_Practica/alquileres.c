@@ -8,6 +8,7 @@
 #include "alquileres.h"
 #include "clientes.h"
 #include "vista.h"
+#include "dataManager.h"
 
 #define FINALIZADO 0
 #define ALQUILADO 1
@@ -18,7 +19,16 @@
 #define LUCAS 6
 #define ROQUE 7
 
-
+void informes(ArrayList* clientes, ArrayList* alquileres)
+{
+    if(al_len(clientes)!=0)
+    {
+        alq_clienteConMasAlquileres(clientes,alquileres);
+        alq_equipoMax(alquileres);
+        tiempoPromedioReal(alquileres);
+        vista_finFuncion();
+    }
+}
 
 void alq_alta(ArrayList* rentals, ArrayList* ctes,int* id)
 {
@@ -29,6 +39,7 @@ void alq_alta(ArrayList* rentals, ArrayList* ctes,int* id)
         alq_setEquipo(a,alq_askEquipo());
         alq_setOp(a,alq_askOp());
         alq_setEstTime(a,alq_askEstTime());
+        alq_setRealTime(a,alq_getEstTime(a));
         alq_setState(a,ALQUILADO);
         alq_mostrarSimple(a,ctes);
         if(vista_confirmar("Confirmar alquiler?"))
@@ -39,24 +50,38 @@ void alq_alta(ArrayList* rentals, ArrayList* ctes,int* id)
             al_add(rentals,a);
         }
     }
+    parseOut(ctes,rentals);
     vista_clean();
+
 }
 
 void alq_baja(ArrayList* rentals, ArrayList* ctes)
 {
     rent* a=NULL;
-
-    alq_mostrarLista(rentals,ctes);
-    a=alq_buscarId(rentals);
-    alq_setRealTime(a,alq_askRealTime());
-    vista_encabezadoFinAlq();
-    vista_mostrarFinAlq(a,ctes);
-    if(vista_confirmar("Confirmar fin de alquiler?"))
+    if(ctes!=NULL&&rentals!=NULL)
     {
-        alq_setState(a,FINALIZADO);
-    }
-    vista_clean();
+        if(al_len(rentals)!=0)
+        {
 
+            alq_mostrarLista(rentals,ctes);
+            a=alq_buscarId(rentals);
+            vista_mostrarUnAlq(a,ctes);
+            alq_setRealTime(a,alq_askRealTime());
+
+            if(vista_confirmar("\nConfirmar fin de alquiler?"))
+            {
+                vista_encabezadoFinAlq();
+                vista_mostrarFinAlq(a,ctes);
+                alq_setState(a,FINALIZADO);
+            }
+            vista_clean();
+            parseOut(ctes,rentals);
+        }
+        else
+        {
+            vista_noData();
+        }
+    }
 }
 
 int alq_askCte(ArrayList* ctes)
@@ -64,7 +89,7 @@ int alq_askCte(ArrayList* ctes)
     client* c;
     clientes_mostrarLista(ctes);
     c=clientes_buscarId(ctes);
-    return c->idCte;
+    return clientes_getId(c);
 }
 
 int alq_askEquipo()
@@ -251,7 +276,7 @@ int alq_askEstTime()
 {
     int aux;
 
-    aux=entero_get("tiempo estimado de alquiler");
+    aux=entero_get("tiempo estimado de alquiler (hs)");
 
     return aux;
 }
@@ -259,7 +284,7 @@ int alq_askRealTime()
 {
     int aux;
 
-    aux=entero_get("tiempo real de alquiler");
+    aux=entero_get("tiempo real de alquiler (hs)");
 
     return aux;
 }
@@ -267,7 +292,8 @@ int alq_askRealTime()
 void alq_mostrarSimple(rent* a,ArrayList* cte)
 {
     alq_printEquipo(a);
-    printf("- %dhs ",alq_getEstTime(a));
+    printf(" -- %dhs",alq_getEstTime(a));
+    printf(" -- ");
     alq_printCte(a,cte);
 }
 
@@ -386,7 +412,7 @@ void alq_clienteConMasAlquileres(ArrayList* ctes, ArrayList* alq)
             }
 
         }
-        if(contadorAlq<max)
+        if(contadorAlq>max)
         {
             max=contadorAlq;
             cteUno=i;
@@ -400,13 +426,17 @@ void alq_clienteConMasAlquileres(ArrayList* ctes, ArrayList* alq)
     }
 
     c=al_get(ctes,cteUno);
-    printf("\nEl cliente con mas alquileres es: ");
-    vista_mostrarUnCte(c);
     if(cteUno!=cteDos)
     {
-        printf("\nY el siguiente cliente tiene la misma cantidad: ");
+        printf("\nLos clientes con mas alquileres son:");
+        vista_mostrarUnCte(c);
         b=al_get(ctes,cteDos);
         vista_mostrarUnCte(b);
+    }
+    else
+    {
+        printf("\nEl cliente con mas alquileres es:");
+        vista_mostrarUnCte(c);
     }
 }
 
@@ -434,35 +464,36 @@ void alq_equipoMax(ArrayList* alq)
             break;
         }
     }
+    printf("\n\n");
     if(amo>mezc&&amo>tal)
     {
-        printf("El equipo mas alquilado es la amoladora, y se alquilaron %d en total",amo);
+        printf("El equipo mas alquilado es la amoladora, y se alquilaron %d en total.",amo);
 
     }
     if(mezc>amo||tal>amo)
     {
         if(mezc>tal)
         {
-            printf("El equipo mas alquilado es la mezcladora, y se alquilaron %d en total",mezc);
+            printf("El equipo mas alquilado es la mezcladora, y se alquilaron %d en total.",mezc);
         }
         else
         {
-            printf("El equipo mas alquilado es el taladro, y se alquilaron %d en total",tal);
+            printf("El equipo mas alquilado es el taladro, y se alquilaron %d en total.",tal);
         }
     }
     else if(mezc==amo||tal==amo)
     {
         if(mezc==tal)
         {
-            printf("Los tres equipos se alquilaron por igual, %d de cada uno",amo);
+            printf("Los tres equipos se alquilaron por igual, %d de cada uno.",amo);
         }
         else if(mezc==amo)
         {
-            printf("La mezcladora y la amoladora se alquilaron por igual, %d de cada una",amo);
+            printf("La mezcladora y la amoladora se alquilaron por igual, %d de cada una.",amo);
         }
         else
         {
-            printf("La amoladora y el taladro se alquilaron por igual, %d de cada uno",amo);
+            printf("La amoladora y el taladro se alquilaron por igual, %d de cada uno.",amo);
         }
     }
 
@@ -474,16 +505,24 @@ void tiempoPromedioReal(ArrayList* alq)
 {
     rent* a=NULL;
     int contador=0, acumulador=0;
-    int i,promedio;
-    for(i=0;i<al_len(alq);i++)
+    int i,promedio,flag=1;
+    for(i=0; i<al_len(alq); i++)
     {
         a=al_get(alq,i);
         if(alq_getState(a)==FINALIZADO)
         {
+            flag=0;
             contador++;
             acumulador+=alq_getRealTime(a);
         }
     }
-    promedio=acumulador/contador;
-    printf("\nEl tiempo promedio real de alquiler de los equipos es de %dhs",promedio);
+    if(flag)
+    {
+        printf("\n\nAun no hay alquileres finalizados...\n");
+    }
+    else
+    {
+        promedio=acumulador/contador;
+        printf("\n\nEl tiempo promedio real de alquiler de los equipos es de %dhs. ",promedio);
+    }
 }

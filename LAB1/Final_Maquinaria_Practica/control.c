@@ -30,9 +30,11 @@ void control_init()
         {
         case 1:
             clientes_alta(clientes,&idCte);
+            parseOut(clientes,alquileres);
             break;
         case 2:
             clientes_modificar(clientes);
+            parseOut(clientes,alquileres);
             break;
         case 3:
             clientes_baja(clientes,alquileres);
@@ -44,18 +46,9 @@ void control_init()
             alq_baja(alquileres,clientes);
             break;
         case 6:
-            alq_clienteConMasAlquileres(clientes,alquileres);
-            alq_equipoMax(alquileres);
-            tiempoPromedioReal(alquileres);
-            break;
-        case 7:
-            ctes_parseOut(clientes,"clientes.csv");
-            alq_parseOut(alquileres,"alq.csv");
-            printf("Archivos generados succesfully ahre\n");
+            informes(clientes,alquileres);
             break;
         case 0:
-            ctes_parseOut(clientes,"clientes.csv");
-            alq_parseOut(alquileres,"alq.csv");
             printf("Adios!\n");
             system("pause");
             salir = 1;

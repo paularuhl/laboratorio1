@@ -1,57 +1,36 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lib.h"
+#include "library.h"
 
 int main()
 {
-    ArrayList* destinatarios=al_newArrayList();
-    ArrayList* listaNegra=al_newArrayList();
-    ArrayList* depurados=al_newArrayList();
+    ArrayList* logEntry=al_newArrayList();
+    ArrayList* service=al_newArrayList();
 
     int opcion, salir=0;
 
     do
     {
-        opcion = generic_menu();
+        vista_menuPrincipal();
+        opcion=entero_get("opcion");
         switch(opcion)
         {
         case 1:
-            main_cargarLista("de destinatarios","destinatarios.csv",destinatarios);
+            leerLog(logEntry,service);
             break;
         case 2:
-            main_cargarLista("negra","black_list.csv",listaNegra);
+            procesarInformacion(logEntry,service);
             break;
         case 3:
-            main_depurar(destinatarios,listaNegra,depurados);
+            estadisticas(logEntry,service);
             break;
-        case 4:
-            dest_mostrarLista(depurados);
-            break;
-    /*  case 5:
-            generic_finFuncion();
-            break;
-        case 6:
-            generic_finFuncion();
-            break;
-        case 7:
-            generic_finFuncion();
-            break;
-        case 8:
-            generic_finFuncion();
-            break;
-        case 9:
-            generic_finFuncion();
-            break;
-            */
         case 0:
             printf("Adios!\n");
             system("pause");
             salir = 1;
             break;
         default:
-            printf("\nOpcion invalida. Intente otra vez.");
-            system("pause");
-            system("cls");
+            vista_opcionInvalida();
             break;
         }
     }

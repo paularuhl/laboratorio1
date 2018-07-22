@@ -35,13 +35,29 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ArrayList.h" />
-		<Unit filename="lib.c">
+		<Unit filename="library.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="lib.h" />
+		<Unit filename="library.h" />
+		<Unit filename="logEntry.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="logEntry.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="parser.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="parser.h" />
+		<Unit filename="service.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="service.h" />
+		<Unit filename="vista.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="vista.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -1,0 +1,77 @@
+# depslib dependency file v1.0
+1530221621 source:c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1530221686 c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\arraylist.h
+
+1532055036 source:c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\library.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"library.h"
+	"ArrayList.h"
+	"parser.h"
+
+1532055036 c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\library.h
+	"ArrayList.h"
+	"parser.h"
+
+1532055036 c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\parser.h
+	"ArrayList.h"
+	"vista.h"
+	"service.h"
+	"logEntry.h"
+
+1532054796 c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\vista.h
+	"ArrayList.h"
+	"service.h"
+
+1532015927 c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\service.h
+	"ArrayList.h"
+
+1532015927 c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\logentry.h
+	"ArrayList.h"
+
+1532016776 source:c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\logentry.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayList.h"
+	"logEntry.h"
+	"service.h"
+
+1532055036 source:c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"parser.h"
+
+1532052640 source:c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\service.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"ArrayList.h"
+	"service.h"
+
+1532055050 source:c:\users\palu\desktop\utnstuff\lab1\final_crashlog_practica\vista.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"vista.h"
+	"service.h"
+	"logEntry.h"
+	"library.h"
+
