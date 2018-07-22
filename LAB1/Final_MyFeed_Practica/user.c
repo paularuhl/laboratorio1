@@ -62,14 +62,31 @@ int user_getId (user* u)
 
 int user_compararPop(void* itemA, void* itemB)
 {
-    user* item1=NULL;
-    user* item2=NULL;
+    user* item1;
+    user* item2;
+    int a, b, r;
 
     item1=(user*)itemA;
     item2=(user*)itemB;
 
-    return strcmp(item1->pop,item2->pop);
+    a=atoi(user_getPop(item1));
+    b=atoi(user_getPop(item2));
+    if(a>b)
+    {
+        r=1;
+    }
+    else if(a<b)
+    {
+        r=-1;
+    }
+    else if(a==b)
+    {
+        r=0;
+    }
+
+    return r;
 }
+
 
 int user_compararNick(void* itemA, void* itemB)
 {

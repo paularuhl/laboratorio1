@@ -438,7 +438,7 @@ int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order)
                 pElement2 = al_get(this,j);
                 if(order)
                 {
-                    if((*pFunc)(pElement1,pElement2))
+                    if(pFunc(pElement1,pElement2)==1)
                     {
                         aux=*(this->pElements+i);
                         *(this->pElements+i)=*(this->pElements+j);
@@ -448,7 +448,7 @@ int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order)
                 }
                 else
                 {
-                    if((*pFunc)(pElement1,pElement2)==-1)
+                    if(pFunc(pElement1,pElement2)==-1)
                     {
                         aux=*(this->pElements+i);
                         *(this->pElements+i)=*(this->pElements+j);
@@ -459,8 +459,6 @@ int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order)
         }
         return 0;
     }
-
-
     return -1;
 }
 

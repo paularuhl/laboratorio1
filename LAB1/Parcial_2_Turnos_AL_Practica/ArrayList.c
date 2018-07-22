@@ -438,7 +438,7 @@ int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order)
                 pElement2 = al_get(this,j);
                 if(order)
                 {
-                    if((*pFunc)(pElement1,pElement2))
+                    if(pFunc(pElement1,pElement2)==1)
                     {
                         aux=*(this->pElements+i);
                         *(this->pElements+i)=*(this->pElements+j);
@@ -448,7 +448,7 @@ int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order)
                 }
                 else
                 {
-                    if((*pFunc)(pElement1,pElement2)==-1)
+                    if(pFunc(pElement1,pElement2)==-1)
                     {
                         aux=*(this->pElements+i);
                         *(this->pElements+i)=*(this->pElements+j);
@@ -459,10 +459,32 @@ int al_sort(ArrayList* this, int (*pFunc)(void*,void*), int order)
         }
         return 0;
     }
-
-
     return -1;
 }
+
+
+
+ArrayList* al_filter(ArrayList* listIn, int (*functionFilter)(void*))
+{
+    ArrayList* returnAux=NULL;
+    int i, aux;
+
+    if(listIn!=NULL && functionFilter!=NULL)
+    {
+        returnAux=al_newArrayList();
+        for(i=0; i<listIn->len(listIn); i++)
+        {
+            aux=functionFilter(listIn->get(listIn,i));
+            if(aux)
+            {
+                returnAux->add(returnAux,listIn->get(listIn,i));
+            }
+        }
+    }
+    return returnAux;
+}
+
+
 
 
 /** \brief Increment the number of elements in pList in AL_INCREMENT elements.

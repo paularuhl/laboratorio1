@@ -39,7 +39,6 @@ void post_setPop(post* p, char* aux)
     }
 }
 
-
 char* post_getMsg (post* p)
 {
     char* str=NULL;
@@ -77,16 +76,30 @@ char* post_getPop (post* p)
     return str;
 }
 
-
-
 int post_compararPop(void* itemA, void* itemB)
 {
     post* item1;
     post* item2;
+    int a, b, r;
 
     item1=(post*)itemA;
     item2=(post*)itemB;
 
-    return strcmp(item1->pop,item2->pop);
+    a=atoi(post_getPop(item1));
+    b=atoi(post_getPop(item2));
+    if(a>b)
+    {
+        r=1;
+    }
+    else if(a<b)
+    {
+        r=-1;
+    }
+    else if(a==b)
+    {
+        r=0;
+    }
+
+    return r;
 }
 

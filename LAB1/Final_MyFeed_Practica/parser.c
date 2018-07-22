@@ -87,10 +87,10 @@ void user_parseOut(ArrayList* lista,char filename[])
         fp=fopen(filename,"w");
         if(fp!=NULL)
         {
-            for(i=0;i<lista->len(lista);i++)
+            for(i=0; i<al_len(lista); i++)
             {
-                    d=(user*) lista->get(lista,i);
-                    fprintf(fp,"%d,%s,%s\n",user_getId(d),user_getPop(d),user_getNick(d));
+                d=(user*) al_get(lista,i);
+                fprintf(fp,"%d,%s,%s\n",user_getId(d),user_getPop(d),user_getNick(d));
             }
         }
         fclose(fp);
@@ -113,11 +113,12 @@ void feed_parseOut(ArrayList* usuarios, ArrayList* mensajes)
             {
                 u=(user*) al_get(usuarios,i);
                 s=(user*) al_get(usuarios,i+1);
-                if(user_getPop(u)==user_getPop(s))
+
+                for(k=0; k<al_len(mensajes); k++)
                 {
-                    for(k=0; k<al_len(mensajes); k++)
+                    p=(post*) al_get(mensajes,k);
+                    if(user_getPop(u)==user_getPop(s))
                     {
-                        p=(post*) al_get(mensajes,k);
                         if(post_getIdUser(p)==user_getId(u))
                         {
                             fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(u),user_getNick(u),user_getPop(u));
@@ -127,19 +128,6 @@ void feed_parseOut(ArrayList* usuarios, ArrayList* mensajes)
                         {
                             fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(s),user_getNick(s),user_getPop(s));
                             break;
-                        }
-                    }
-                }
-                else
-                {
-                    for(k=0; k<al_len(mensajes); k++)
-                    {
-                        p=(post*) al_get(mensajes,k);
-                        if(post_getIdUser(p)==user_getId(u))
-                        {
-                            fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(s),user_getNick(s),user_getPop(s));
-                            break;
-
                         }
                     }
                 }

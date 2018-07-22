@@ -26,8 +26,8 @@ int main()
             system("cls");
             break;
         case 2:
-            al_sort(usuarios,user_compararNick,1);
-            user_parseOut(usuarios,"test.csv");
+            al_sort(usuarios,user_compararPop,0);
+            al_sort(mensajes,post_compararPop,0);
             system("pause");
             system("cls");
             break;
