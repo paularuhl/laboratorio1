@@ -1,40 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <conio.h>
-
 #include "control.h"
-#include "clientes.h"
-#include "alquileres.h"
-#include "ArrayList.h"
-#include "vista.h"
-#include "lib.h"
-#include "dataManager.h"
+
+///private functions
+void informes(ArrayList* clientes, ArrayList* alquileres);
 
 void control_init()
 {
     ArrayList* clientes=al_newArrayList();
     ArrayList* alquileres=al_newArrayList();
-
     int opcion, salir=0;
     int idCte=ctes_parseIn(clientes,"clientes.csv");
     int idAlq=alq_parseIn(alquileres,"alq.csv");
-
     do
     {
         vista_menuPrincipal();
-        opcion=entero_get("opcion");
-
-        switch(opcion)
+        switch(opcion=entero_get("opcion"))
         {
         case 1:
             clientes_alta(clientes,&idCte);
-            parseOut(clientes,alquileres);
             break;
         case 2:
             clientes_modificar(clientes);
-            parseOut(clientes,alquileres);
             break;
         case 3:
             clientes_baja(clientes,alquileres);
@@ -59,4 +46,20 @@ void control_init()
         }
     }
     while(salir==0);
+}
+
+///private functions
+/** \brief displays statistics
+ * \param [clientes ArrayList*] pointer to client list
+ * \param [alquileres ArrayList*] pointer to rental list
+ * \return void
+ */ void informes(ArrayList* clientes, ArrayList* alquileres)
+{
+    if(al_len(clientes)!=0)
+    {
+        clientes_conMasAlquileres(clientes,alquileres);
+        alq_equipoMax(alquileres);
+        alq_tiempoPromedioReal(alquileres);
+        vista_finFuncion();
+    }
 }

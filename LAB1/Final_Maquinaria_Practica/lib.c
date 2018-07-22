@@ -6,8 +6,6 @@
 #include "lib.h"
 
 ///validar strings
-
-
 int string_isNull (char value)
 {
     if(value=='\0' || value ==' ')
@@ -16,7 +14,6 @@ int string_isNull (char value)
     }
     return 0;
 }
-
 int string_esNumerico(char array[])
 {
     int i=0, r=1;
@@ -58,7 +55,6 @@ int string_esSoloLetras(char array[])
     }
     return r;
 }
-
 int string_validateLength(char* str, int len)
 {
     int i, r=1;
@@ -97,7 +93,6 @@ void string_get(char mensaje[],char input[])
     printf("%s",mensaje);
     gets(input);
 }
-
 int string_getNumerico(char mensaje[],char input[])
 {
     char aux[256];
@@ -109,8 +104,6 @@ int string_getNumerico(char mensaje[],char input[])
     }
     return 0;
 }
-
-
 int string_getLetras(char mensaje[],char input[])
 {
     char aux[256];
@@ -122,7 +115,11 @@ int string_getLetras(char mensaje[],char input[])
     }
     return 0;
 }
-
+void string_initialUpper(char* aux)
+{
+    strlwr(aux);
+    *(aux+0)=toupper(*aux+0);
+}
 ///enteros
 int entero_get(char mensaje[])
 {
@@ -137,10 +134,7 @@ int entero_get(char mensaje[])
 
     return dato;
 }
-
-
 ///funciones particulares del programa
-
 char* gen_newString()
 {
     char* aux=(char*)malloc(sizeof(char)*50);

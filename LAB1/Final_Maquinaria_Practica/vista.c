@@ -1,13 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <ctype.h>
 #include <conio.h>
 #include "vista.h"
-#include "alquileres.h"
-
-//#include "alquileres.h"
-//#include "ArrayList.h"
 
 void vista_menuPrincipal()
 {
@@ -21,7 +16,6 @@ void vista_menuPrincipal()
 
     printf("\n0. Salir\n");
 }
-
 void vista_menuModificar()
 {
     system("cls");
@@ -49,7 +43,6 @@ void vista_opcionInvalida()
     system("pause");
     system("cls");
 }
-
 void vista_errorItem(char item[],char tipo[])
 {
     printf("Error, %s solo puede tener %s.\n",item,tipo);
@@ -58,21 +51,16 @@ void vista_errorNotFound()
 {
     printf("Ups! No encontramos lo que estabas buscando. Intenta nuevamente.\n");
 }
-
-
 void vista_clean ()
 {
     system("cls");
 }
-
 void vista_finFuncion ()
 {
     printf("\n");
     system("pause");
     system("cls");
 }
-
-
 int vista_confirmar(char pregunta[])
 {
     char respuesta;
@@ -104,61 +92,20 @@ int vista_confirmar(char pregunta[])
 
     return r;
 }
-
 void vista_noData()
 {
     printf("No hay datos para mostrar...\n");
 }
-
 void vista_encabezadoClientes()
 {
     printf("\nID\t| DNI\t\t| Nombre y Apellido");
 }
-
-void vista_mostrarUnCte(client* c)
-{
-    printf("\n%d\t| %s\t| %s %s",clientes_getId(c),clientes_getDni(c),clientes_getName(c),clientes_getLastname(c));
-}
-
 void vista_encabezadoAlq()
 {
     printf("\nID\t| T.Est\t| Equipo\t| Operador\t| Cliente");
 }
-void vista_mostrarUnAlq(rent* a, ArrayList* ctes)
-{
-    printf("\n%d\t| %dhs\t| ",alq_getId(a),alq_getEstTime(a));
-    alq_printEquipo(a);
-    printf("\t| ");
-    alq_printOp(a);
-    printf("\t\t| ");
-    alq_printCte(a,ctes);
-}
-void vista_mostrarFinAlq(rent* a, ArrayList* ctes)
-{
-    printf("\n%d\t| %dhs  \t| %dhs  \t| ",alq_getId(a),alq_getEstTime(a),alq_getRealTime(a));
-    alq_printEquipo(a);
-    printf("\t| ");
-    alq_printOp(a);
-    printf("\t\t| ");
-    alq_printCte(a,ctes);
-}
-
 void vista_encabezadoFinAlq()
 {
     printf("\nID\t| T.Est.\t| T.Real\t| Equipo\t| Operador\t| Cliente");
 }
-void vista_mostrarAlqBajaCte(client* c, ArrayList* ctes, ArrayList* alq)
-{
-    int i;
-    rent* a=NULL;
-    printf("\nAlquileres a finalizar con  baja de cliente (se tomara el tiempo estimado como real):");
-    for(i=0; i<al_len(alq); i++)
-    {
-        a=al_get(alq,i);
-        if(alq_getCte(a)==clientes_getId(c) && alq_getState(a))
-        {
-            vista_encabezadoFinAlq();
-            vista_mostrarFinAlq(a,ctes);
-        }
-    }
-}
+

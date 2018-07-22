@@ -1,6 +1,11 @@
 #ifndef CONTROL_H_INCLUDED
 #define CONTROL_H_INCLUDED
+#include "clientes.h"
+#include "vista.h"
+#include "dataManager.h"
 
-void control_init();
+/** \brief initializes app
+ * \return void
+ */ void control_init();
 
 #endif // CONTROL_H_INCLUDED

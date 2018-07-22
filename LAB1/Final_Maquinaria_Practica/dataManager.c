@@ -3,17 +3,14 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
-#include "lib.h"
-#include "ArrayList.h"
 #include "dataManager.h"
-#include "clientes.h"
-#include "alquileres.h"
 
-void parseOut(ArrayList* clientes,ArrayList* alquileres)
+void exportData(ArrayList* clientes,ArrayList* alquileres)
 {
     ctes_parseOut(clientes,"clientes.csv");
     alq_parseOut(alquileres,"alq.csv");
 }
+
 int ctes_parseIn(ArrayList* l,char filename[])
 {
     FILE* fp;
@@ -29,7 +26,6 @@ int ctes_parseIn(ArrayList* l,char filename[])
     {
         do
         {
-
             c=clientes_newStruct();
             fscanf(fp,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",idAux,estado,lastname,name,dni);
             id=atoi(idAux);
@@ -42,17 +38,10 @@ int ctes_parseIn(ArrayList* l,char filename[])
             l->add(l,c);
         }
         while(!feof(fp));
-        printf("**BIENVENIDO**\n");
+        fclose(fp);
     }
-    else
-    {
-        printf("~~~~~~~~~~~~~~~\n");
-    }
-    fclose(fp);
-
     return id;
 }
-
 void ctes_parseOut(ArrayList* lista,char filename[])
 {
     client* c;
@@ -63,9 +52,9 @@ void ctes_parseOut(ArrayList* lista,char filename[])
         fp=fopen(filename,"w");
         if(fp!=NULL)
         {
-            for(i=0; i<lista->len(lista); i++)
+            for(i=0; i<al_len(lista); i++)
             {
-                c=(client*) lista->get(lista,i);
+                c=(client*) al_get(lista,i);
                 fprintf(fp,"%d,%d,%s,%s,%s\n",clientes_getId(c),clientes_getState(c),clientes_getLastname(c),clientes_getName(c),clientes_getDni(c));
             }
         }
@@ -75,11 +64,7 @@ void ctes_parseOut(ArrayList* lista,char filename[])
     {
         printf("No se pudo generar un archivo.");
     }
-    fclose(fp);
-
 }
-
-
 
 int alq_parseIn(ArrayList* l,char filename[])
 {
@@ -99,7 +84,6 @@ int alq_parseIn(ArrayList* l,char filename[])
     {
         do
         {
-
             a=alq_newStruct();
             fscanf(fp,"%d,%d,%d,%d,%d,%d,%[^\n]\n",&idCte,&idAlq,&equipo,&state,&estTime,&realTime,op);
             operador=atoi(op);
@@ -114,17 +98,10 @@ int alq_parseIn(ArrayList* l,char filename[])
             l->add(l,a);
         }
         while(!feof(fp));
-        printf("***************\n");
+        fclose(fp);
     }
-    else
-    {
-        printf("~~~~~~~~~~~~~~~\n");
-    }
-    fclose(fp);
-
     return idAlq;
 }
-
 void alq_parseOut(ArrayList* lista,char filename[])
 {
     rent* a;
@@ -147,6 +124,4 @@ void alq_parseOut(ArrayList* lista,char filename[])
     {
         printf("No se pudo generar un archivo.");
     }
-    fclose(fp);
-
 }

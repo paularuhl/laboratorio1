@@ -1,10 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "lib.h"
+#include "control.h"
 
 int main()
 {
-
     control_init();
 
     return 0;

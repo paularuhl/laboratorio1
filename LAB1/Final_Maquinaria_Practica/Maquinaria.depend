@@ -1,11 +1,8 @@
 # depslib dependency file v1.0
-1531613543 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\main.c
-	<stdio.h>
-	<stdlib.h>
-	"lib.h"
+1532300210 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\main.c
+	"control.h"
 
-1531621529 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\lib.h
-	"ArrayList.h"
+1532299814 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\lib.h
 
 1530221686 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\arraylist.h
 
@@ -15,7 +12,7 @@
 	<string.h>
 	"ArrayList.h"
 
-1531668356 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\lib.c
+1532299554 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\lib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23,63 +20,46 @@
 	<conio.h>
 	"lib.h"
 
-1532219604 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.c
+1532299339 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	<ctype.h>
-	<conio.h>
-	<time.h>
-	"lib.h"
 	"alquileres.h"
+
+1532299351 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.h
 	"clientes.h"
+
+1532300106 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+
+1532299288 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.h
+	"ArrayList.h"
+	"dataManager.h"
+	"alquileres.h"
+	"lib.h"
 	"vista.h"
 
-1531968269 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.h
-	"clientes.h"
-
-1531970470 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.c
+1532300439 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	<ctype.h>
-	<conio.h>
-	"ArrayList.h"
-	"lib.h"
-	"clientes.h"
-	"alquileres.h"
-	"vista.h"
-
-1531970485 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.h
-	"ArrayList.h"
-
-1532219185 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-	<conio.h>
 	"control.h"
+
+1532297381 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.h
 	"clientes.h"
-	"alquileres.h"
-	"ArrayList.h"
 	"vista.h"
-	"lib.h"
 	"dataManager.h"
 
-1531617350 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\control.h
+1532299164 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.h
 
-1531931194 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.h
-	"alquileres.h"
-
-1532219956 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.c
+1532300192 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
 	<ctype.h>
 	<conio.h>
 	"vista.h"
-	"alquileres.h"
 
 1531670720 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\ctes.h
 
@@ -94,19 +74,19 @@
 	"ctes.h"
 	"vista.h"
 
-1531969647 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\datamanager.h
+1532298314 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\datamanager.h
+	"ArrayList.h"
+	"clientes.h"
+	"alquileres.h"
+	"lib.h"
 
-1531969598 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\datamanager.c
+1532300704 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\datamanager.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	<conio.h>
-	"lib.h"
-	"ArrayList.h"
 	"dataManager.h"
-	"clientes.h"
-	"alquileres.h"
 
 1530221621 source:c:\users\palu\desktop\utn\zips\final_maquinaria_practica\arraylist.c
 	<stdio.h>
