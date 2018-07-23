@@ -106,33 +106,44 @@ void feed_parseOut(ArrayList* usuarios, ArrayList* mensajes)
     int i,j,k;
     if(mensajes!=NULL&&usuarios!=NULL)
     {
+        al_sort(usuarios,user_compararPop,0);
+        al_sort(mensajes,post_compararPop,0);
+
         fp=fopen("feed.csv","w");
         if(fp!=NULL)
         {
             for(i=0; i<al_len(usuarios); i++)
             {
-                u=(user*) al_get(usuarios,i);
-                s=(user*) al_get(usuarios,i+1);
-
-                for(k=0; k<al_len(mensajes); k++)
+                j=i+1;
+                u=al_get(usuarios,i);
+                s=al_get(usuarios,j);
+                if(user_getPop(u)==user_getPop(s))
                 {
-                    p=(post*) al_get(mensajes,k);
-                    if(user_getPop(u)==user_getPop(s))
+                    for(k=0; k<al_len(mensajes); k++)
                     {
-                        if(post_getIdUser(p)==user_getId(u))
+                        p=al_get(mensajes,k);
+                        if(user_getId(u)==post_getIdUser(p))
                         {
                             fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(u),user_getNick(u),user_getPop(u));
-                            break;
                         }
-                        else if(post_getIdUser(p)==user_getId(s))
+                        else if(user_getId(s)==post_getIdUser(p))
                         {
                             fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(s),user_getNick(s),user_getPop(s));
-                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    for(k=0; k<al_len(mensajes); k++)
+                    {
+                        p=al_get(mensajes,k);
+                        if(user_getId(u)==post_getIdUser(p))
+                        {
+                            fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(u),user_getNick(u),user_getPop(u));
                         }
                     }
                 }
             }
-
         }
     }
     fclose(fp);

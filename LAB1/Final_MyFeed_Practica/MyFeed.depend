@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1532302602 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\main.c
+1532305477 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\main.c
 	<stdio.h>
 	<stdlib.h>
 	"lib.h"
@@ -47,7 +47,7 @@
 1532218275 c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\user.h
 	"ArrayList.h"
 
-1532301344 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\parser.c
+1532304473 source:c:\users\palu\desktop\utnstuff\lab1\final_myfeed_practica\parser.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
