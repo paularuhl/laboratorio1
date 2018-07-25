@@ -3,7 +3,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
-#include "numeros.h"
+#include "letras.h"
 #include "dataManager.h"
 
 void exportData(ArrayList* clientes,ArrayList* alquileres)
@@ -11,33 +11,36 @@ void exportData(ArrayList* clientes,ArrayList* alquileres)
 
 }
 
-void number_parseIn(ArrayList* l,char filename[])
+void letras_parseIn(ArrayList* l,char filename[], int* id)
 {
     FILE* fp;
-    number* n;
-    int num, par, impar, primo;
-    char name[21], numAux[2], parAux[2], imparAux[2], primoAux[2];
+    eLetra* n;
+    int vocal, cons;
+    char letra;
+    char name[10], vocalAux[2], consAux[2];
+    char lalala[30];
+
     fp = fopen(filename,"r");
     if(fp!=NULL&&l!=NULL)
     {
+        fscanf(fp,"%[^\n]\n",lalala);
         do
         {
-            n=number_newStruct();
-            fscanf(fp,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",numAux,name,parAux,imparAux,primoAux);
-            num=atoi(numAux);
-            par=atoi(parAux);
-            impar=atoi(imparAux);
-            primo=atoi(primoAux);
-            number_new(n,num,name,par,impar,primo);
+            (*id)++;
+            n=letra_newStruct();
+            fscanf(fp,"%[^,],%[^,],%[^,],%[^\n]\n",&letra,name,vocalAux,consAux);
+            vocal=atoi(vocalAux);
+            cons=atoi(consAux);
+            letra_new(n,id,letra,name,vocal,cons);
             l->add(l,n);
         }
         while(!feof(fp));
         fclose(fp);
     }
 }
-void number_parseOut(ArrayList* lista,char filename[])
+void letra_parseOut(ArrayList* lista,char filename[])
 {
-    number* n;
+    eLetra* n;
     FILE* fp;
     int i;
     if(lista!=NULL)
@@ -47,8 +50,8 @@ void number_parseOut(ArrayList* lista,char filename[])
         {
             for(i=0; i<al_len(lista); i++)
             {
-                n=(number*) al_get(lista,i);
-                fprintf(fp,"%d,%s,%d,%d,%d\n",number_getNum(n),number_getName(n),number_getPar(n),number_getImpar(n),number_getPrimo(n));
+                n=(eLetra*) al_get(lista,i);
+                fprintf(fp,"%c,%s,%d,%d\n",letra_getLetra(n),letra_getName(n),letra_getVocal(n),letra_getConsonante(n));
             }
         }
         fclose(fp);
