@@ -16,7 +16,7 @@
 	"letras.h"
 	"dataManager.h"
 
-1532528266 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\letras.h
+1532529323 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\letras.h
 	"ArrayList.h"
 	"dataManager.h"
 	"vista.h"
@@ -28,7 +28,7 @@
 
 1532519237 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\vista.h
 
-1532527148 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\letras.c
+1532529601 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\letras.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

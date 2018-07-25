@@ -52,6 +52,7 @@ void mostrarLista(ArrayList* lista);
 void muestroLetra(eLetra* c);
 void nuevaCadena(ArrayList* lista, ArrayList* A,ArrayList* B);
 ArrayList* cadenaB(ArrayList* lista,int* id);
+int letra_compararPop(void* itemA, void* itemB);
 
 
 #endif // NUMEROS_H_INCLUDED

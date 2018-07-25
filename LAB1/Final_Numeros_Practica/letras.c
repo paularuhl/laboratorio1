@@ -221,9 +221,10 @@ void mostrarLista(ArrayList* lista)
 void nuevaCadena(ArrayList* lista, ArrayList* A,ArrayList* B)
 {
     int i,j;
-    char cadena[200];
+    char cadena[200]={};
     char letrita;
     eLetra* n;
+    ArrayList* C=al_newArrayList();
     if(lista!=NULL)
     {
         string_get("Ingrese cadena: ",cadena);
@@ -237,7 +238,7 @@ void nuevaCadena(ArrayList* lista, ArrayList* A,ArrayList* B)
             {
                 if(letrita==cadena[i])
                 {
-                    al_add(A,n);
+                    al_add(C,n);
                 }
                 i++;
             }
@@ -257,7 +258,8 @@ void nuevaCadena(ArrayList* lista, ArrayList* A,ArrayList* B)
             }
         }*/
     }
-   mostrarLista(A);
+   al_sort(C,letra_compararPop,0);
+   mostrarLista(C);
    mostrarLista(B);
 }
 /*ArrayList* cadenaB(ArrayList* lista,int* id)
@@ -293,3 +295,33 @@ void nuevaCadena(ArrayList* lista, ArrayList* A,ArrayList* B)
     return listaB;
 }
 */
+
+
+int letra_compararPop(void* itemA, void* itemB)
+{
+    eLetra* item1;
+    eLetra* item2;
+    int a, b, r;
+
+    item1=(eLetra*)itemA;
+    item2=(eLetra*)itemB;
+
+    a=letra_getLetra(item1);
+    b=letra_getLetra(item2);
+    if(a>b)
+    {
+        r=1;
+    }
+    else if(a<b)
+    {
+        r=-1;
+    }
+    else if(a==b)
+    {
+        r=0;
+    }
+
+    return r;
+}
+
+
