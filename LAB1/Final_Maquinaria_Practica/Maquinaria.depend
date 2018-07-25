@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1532300210 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\main.c
+1532300735 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\main.c
 	"control.h"
 
 1532299814 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\lib.h
 
 1530221686 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\arraylist.h
 
-1530221621 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\arraylist.c
+1532302716 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\arraylist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -20,7 +20,7 @@
 	<conio.h>
 	"lib.h"
 
-1532299339 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.c
+1532440189 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -29,7 +29,7 @@
 1532299351 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\alquileres.h
 	"clientes.h"
 
-1532300106 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.c
+1532440342 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -54,7 +54,7 @@
 
 1532299164 c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.h
 
-1532300192 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.c
+1532440308 source:c:\users\palu\desktop\utnstuff\lab1\final_maquinaria_practica\vista.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>

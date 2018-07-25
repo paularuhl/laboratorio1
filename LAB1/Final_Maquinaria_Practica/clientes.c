@@ -435,7 +435,7 @@ int clientes_getState(client* c)
  * \return void
  */ void mostrarUnCte(client* c)
 {
-    printf("\n%d\t| %s\t| %s %s",clientes_getId(c),clientes_getDni(c),clientes_getName(c),clientes_getLastname(c));
+    printf("\n%-3d| %-9s| %s %s",clientes_getId(c),clientes_getDni(c),clientes_getName(c),clientes_getLastname(c));
 }
 /** \brief shows a rental for when a client is taken down
  * \param [c client*] pointer to client struct

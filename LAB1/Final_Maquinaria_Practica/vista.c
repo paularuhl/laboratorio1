@@ -98,14 +98,14 @@ void vista_noData()
 }
 void vista_encabezadoClientes()
 {
-    printf("\nID\t| DNI\t\t| Nombre y Apellido");
+    printf("\nID | DNI      | Nombre y Apellido");
 }
 void vista_encabezadoAlq()
 {
-    printf("\nID\t| T.Est\t| Equipo\t| Operador\t| Cliente");
+    printf("\nID | T.Est. | Equipo\t| Operador\t| Cliente");
 }
 void vista_encabezadoFinAlq()
 {
-    printf("\nID\t| T.Est.\t| T.Real\t| Equipo\t| Operador\t| Cliente");
+    printf("\nID | T.Est. | T.Real | Equipo   \t| Operador\t| Cliente");
 }
 

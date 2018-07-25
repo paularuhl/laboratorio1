@@ -315,7 +315,7 @@ int alq_getState(rent* a)
 
 void alq_mostrarUnAlq(rent* a, ArrayList* ctes)
 {
-    printf("\n%d\t| %dhs\t| ",alq_getId(a),alq_getEstTime(a));
+    printf("\n%-3d| %-4dhs | ",alq_getId(a),alq_getEstTime(a));
     alq_printEquipo(a);
     printf("\t| ");
     alq_printOp(a);
@@ -324,7 +324,7 @@ void alq_mostrarUnAlq(rent* a, ArrayList* ctes)
 }
 void alq_mostrarFinAlq(rent* a, ArrayList* ctes)
 {
-    printf("\n%d\t| %dhs  \t| %dhs  \t| ",alq_getId(a),alq_getEstTime(a),alq_getRealTime(a));
+    printf("\n%-3d| %-4dhs | %-4dhs | ",alq_getId(a),alq_getEstTime(a),alq_getRealTime(a));
     alq_printEquipo(a);
     printf("\t| ");
     alq_printOp(a);
