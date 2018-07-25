@@ -11,6 +11,7 @@ typedef struct{
 }user;
 
 user* user_newStruct();
+void user_new(user* u, int id, char* nick, char* pop);
 
 void user_setNick(user* u, char* aux);
 void user_setPop(user* u, char* aux);

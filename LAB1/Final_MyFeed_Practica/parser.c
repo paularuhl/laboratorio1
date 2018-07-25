@@ -3,10 +3,11 @@
 #include <string.h>
 #include <ctype.h>
 #include <conio.h>
-#include "lib.h"
 #include "ArrayList.h"
+#include "lib.h"
 #include "user.h"
 #include "post.h"
+#include "feedItem.h"
 
 void post_parseIn(ArrayList* l,char filename[])
 {
@@ -32,10 +33,7 @@ void post_parseIn(ArrayList* l,char filename[])
             fscanf(fp,"%[^,],%[^,],%[^,],%[^\n]\n",id_Msg,id_User,pop,msg);
             idMsg=atoi(id_Msg);
             idUser=atoi(id_User);
-            post_setIdMsg(p,idMsg);
-            post_setIdUser(p,idUser);
-            post_setPop(p,pop);
-            post_setMsg(p,msg);
+            post_new(p,idMsg,idUser,pop,msg);
             l->add(l,p);
         }
         while(!feof(fp));
@@ -66,9 +64,7 @@ void user_parseIn(ArrayList* l,char filename[])
             u=user_newStruct();
             fscanf(fp,"%[^,],%[^,],%[^\n]\n",idAux,nick,pop);
             id=atoi(idAux);
-            user_setId(u,id);
-            user_setPop(u,pop);
-            user_setNick(u,nick);
+            user_new(u,id,nick,pop);
             l->add(l,u);
         }
         while(!feof(fp));
@@ -96,57 +92,31 @@ void user_parseOut(ArrayList* lista,char filename[])
         fclose(fp);
     }
 }
-
-void feed_parseOut(ArrayList* usuarios, ArrayList* mensajes)
+void feed_parseOut(ArrayList* lista,char filename[])
 {
-    user* u=NULL;
-    user* s=NULL;
-    post* p=NULL;
+    feedItem* f;
     FILE* fp;
-    int i,j,k;
-    if(mensajes!=NULL&&usuarios!=NULL)
+    int i;
+    if(lista!=NULL)
     {
-        al_sort(usuarios,user_compararPop,0);
-        al_sort(mensajes,post_compararPop,0);
-
-        fp=fopen("feed.csv","w");
+        fp=fopen(filename,"w");
         if(fp!=NULL)
         {
-            for(i=0; i<al_len(usuarios); i++)
+            for(i=0; i<al_len(lista); i++)
             {
-                j=i+1;
-                u=al_get(usuarios,i);
-                s=al_get(usuarios,j);
-                if(user_getPop(u)==user_getPop(s))
-                {
-                    for(k=0; k<al_len(mensajes); k++)
-                    {
-                        p=al_get(mensajes,k);
-                        if(user_getId(u)==post_getIdUser(p))
-                        {
-                            fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(u),user_getNick(u),user_getPop(u));
-                        }
-                        else if(user_getId(s)==post_getIdUser(p))
-                        {
-                            fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(s),user_getNick(s),user_getPop(s));
-                        }
-                    }
-                }
-                else
-                {
-                    for(k=0; k<al_len(mensajes); k++)
-                    {
-                        p=al_get(mensajes,k);
-                        if(user_getId(u)==post_getIdUser(p))
-                        {
-                            fprintf(fp,"%d,%s,%s,%d,%s,%s\n",post_getIdMsg(p),post_getMsg(p),post_getPop(p),user_getId(u),user_getNick(u),user_getPop(u));
-                        }
-                    }
-                }
+                f=(feedItem*) al_get(lista,i);
+                fprintf(fp,"%d,%s,%s,%d,%s,%s\n",feedItem_getIdMsg(f),feedItem_getMsg(f),feedItem_getMsgPop(f),
+                        feedItem_getIdUser(f),feedItem_getNick(f),feedItem_getUserPop(f));
             }
         }
+        fclose(fp);
     }
-    fclose(fp);
 }
 
-
+/*
+void doublesort_lol (ArrayList* this)
+{
+    //auxiliar=al_pop(clone,i);
+    //al_push(clone,i,aux2);
+    //al_set(clone,j,auxiliar);
+}*/

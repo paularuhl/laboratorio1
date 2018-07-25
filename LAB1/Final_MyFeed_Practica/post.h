@@ -12,6 +12,7 @@ typedef struct{
 }post;
 
 post* post_newStruct();
+void post_new(post* p, int idMsg, int idUser, char* pop, char* msg);
 
 void post_setMsg(post* p, char* aux);
 void post_setIdMsg(post* p, int aux);

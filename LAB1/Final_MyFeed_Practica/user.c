@@ -9,7 +9,12 @@ user* user_newStruct()
 
     return aux;
 }
-
+void user_new(user* u, int id, char* nick, char* pop)
+{
+    user_setId(u,id);
+    user_setNick(u,nick);
+    user_setPop(u,pop);
+}
 void user_setNick(user* u, char* aux)
 {
     if(u!=NULL)

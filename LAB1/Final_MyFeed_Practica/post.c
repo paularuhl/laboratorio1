@@ -9,7 +9,13 @@ post* post_newStruct()
 
     return aux;
 }
-
+void post_new(post* p, int idMsg, int idUser, char* pop, char* msg)
+{
+    post_setIdMsg(p,idMsg);
+    post_setIdUser(p,idUser);
+    post_setPop(p,pop);
+    post_setMsg(p,msg);
+}
 void post_setMsg(post* p, char* aux)
 {
     if(p!=NULL)
