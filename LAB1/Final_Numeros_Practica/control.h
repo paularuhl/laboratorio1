@@ -1,8 +1,6 @@
 #ifndef CONTROL_H_INCLUDED
 #define CONTROL_H_INCLUDED
-#include "numeros.h"
-#include "vista.h"
-#include "dataManager.h"
+
 
 /** \brief initializes app
  * \return void

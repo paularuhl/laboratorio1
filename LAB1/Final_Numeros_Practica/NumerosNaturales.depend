@@ -1,45 +1,41 @@
 # depslib dependency file v1.0
-1532302716 source:c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\arraylist.c
+1532519237 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\arraylist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"ArrayList.h"
 
-1530221686 c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\arraylist.h
+1532519237 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\arraylist.h
 
-1532480612 source:c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\control.c
-	<stdio.h>
-	<stdlib.h>
-	"control.h"
-
-1532478909 c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\control.h
-	"numeros.h"
-	"vista.h"
-	"dataManager.h"
-
-1532481222 c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\numeros.h
-	"ArrayList.h"
-	"dataManager.h"
-	"vista.h"
-
-1532481222 c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\datamanager.h
-	"ArrayList.h"
-	"numeros.h"
-
-1532481086 c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\lib.h
-
-1532481183 c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\vista.h
-
-1532480603 source:c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\datamanager.c
+1532527157 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\datamanager.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	<conio.h>
-	"numeros.h"
+	"letras.h"
 	"dataManager.h"
 
-1532481086 source:c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\lib.c
+1532529323 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\letras.h
+	"ArrayList.h"
+	"dataManager.h"
+	"vista.h"
+	"lib.h"
+
+1532524085 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\datamanager.h
+	"ArrayList.h"
+	"letras.h"
+
+1532519237 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\vista.h
+
+1532529601 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\letras.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"letras.h"
+
+1532519237 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\lib.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -47,16 +43,17 @@
 	<conio.h>
 	"lib.h"
 
-1532300735 source:c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\main.c
-	"control.h"
+1532519237 d:\ruhl paula\utnstuff\lab1\final_numeros_practica\lib.h
 
-1532480538 source:c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\numeros.c
+1532528266 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\main.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-	"numeros.h"
+	"letras.h"
+	"vista.h"
+	"dataManager.h"
+	"lib.h"
 
-1532481160 source:c:\users\palu\desktop\utnstuff\lab1\final_numeros_practica\vista.c
+1532525889 source:d:\ruhl paula\utnstuff\lab1\final_numeros_practica\vista.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
